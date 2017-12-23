@@ -34,6 +34,15 @@ after_script:
 - greenkeeper-lockfile-upload
 - codeclimate-test-reporter < coverage/lcov.info
 
+before_deploy:
+  - ember build --prod
+
+deploy:
+  provider: firebase
+  token:
+    secure: ${FIREBASE_TOKEN}
+  project: ${PROJECT_NAME}
+
 cache:
   yarn: true
   directories:
