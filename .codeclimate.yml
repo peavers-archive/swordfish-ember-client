@@ -1,0 +1,16 @@
+# Using CodeClimate Platform
+# http://docs.codeclimate.com/article/300-the-codeclimate-platform
+
+engines:
+  eslint:
+    enabled: true
+    channel: "eslint-3"
+  scsslint:
+    enabled: true
+  watson:
+    enabled: false
+
+ratings:
+  paths:
+  - '**/*.js'
+  - '**/*.scss'
