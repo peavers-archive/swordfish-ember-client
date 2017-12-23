@@ -28,7 +28,7 @@ before_script:
 - greenkeeper-lockfile-update
 
 script:
-  # do nothing;
+- yarn test
 
 after_script:
 - greenkeeper-lockfile-upload
