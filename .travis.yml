@@ -2,6 +2,16 @@
 language: node_js
 node_js: 8.5
 
+env:
+  global:
+    - PERCY_ENABLE=0
+
+sudo: false
+dist: trusty
+
+addons:
+  chrome: stable
+
 cache:
   directories:
     - node_modules

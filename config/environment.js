@@ -21,7 +21,7 @@ module.exports = function (environment) {
     authenticationRoute: '',
     auth0: {
       clientID: process.env.AUTH0_CLIENT_ID,
-      domain: process.env.AUTH0_DOAMIN
+      domain: process.env.AUTH0_DOMAIN
     }
   };
 
