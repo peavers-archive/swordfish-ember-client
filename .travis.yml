@@ -1,0 +1,51 @@
+---
+language: node_js
+node_js: 8.5
+
+env:
+  global:
+    - PERCY_ENABLE=0
+
+sudo: false
+dist: trusty
+
+addons:
+  chrome: stable
+
+cache:
+  directories:
+    - node_modules
+    - bower_components
+
+env:
+  global:
+    # See https://git.io/vdao3 for details.
+    - JOBS=1
+
+before_install:
+  - npm config set spin false
+  - npm install -g ember-cli
+  - npm install -g npm@5
+  - npm --version
+  - npm install -g greenkeeper-lockfile@1
+
+install:
+  - npm install
+
+before_script:
+  - if [ $TRAVIS_PULL_REQUEST = 'false' ]; then echo "Enabling Percy on push with default Ember" && export PERCY_ENABLE=1; else export PERCY_ENABLE=0; fi
+  - echo $PERCY_ENABLE
+  - if [ "$PERCY_ENABLE" -ne 1 ]; then export RANDOMISE=--random; fi
+  - echo $RANDOMISE
+  - greenkeeper-lockfile-update
+
+after_script:
+  - greenkeeper-lockfile-upload
+
+before_deploy:
+  - ember build --prod
+
+deploy:
+  provider: firebase
+  token:
+    secure: ${FIREBASE_TOKEN}

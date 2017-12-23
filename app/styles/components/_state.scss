@@ -1,0 +1,28 @@
+.state {
+  vertical-align: middle;
+  font-size: 8px;
+  margin-right: 5px;
+}
+
+.running {
+  color: $green-500;
+}
+
+.stopped {
+  color: $grey-500;
+}
+
+.starting,
+.creating,
+.pending {
+  color: $purple-500
+}
+
+.queued {
+  color: $blue-500;
+}
+
+.shutting-down,
+.stopping {
+  color: $orange-500;
+}

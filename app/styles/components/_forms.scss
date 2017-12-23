@@ -1,0 +1,19 @@
+.input {
+  border: 0;
+  box-shadow: none;
+  border-bottom: 1px solid #e1e4e8;
+  border-radius: 0;
+}
+
+.select {
+  height: 100%;
+}
+
+.label {
+  font-weight: 300;
+}
+
+.input:focus, .input.is-focused, .input:active, .input.is-active, .textarea:focus, .textarea.is-focused, .textarea:active, .textarea.is-active {
+  border-bottom: 1px solid $primary;
+  box-shadow: none;
+}

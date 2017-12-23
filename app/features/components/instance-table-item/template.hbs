@@ -1,0 +1,75 @@
+<td class="is-narrow">
+  <div class="people-avatar">
+    {{#ember-tooltip side='bottom'}}
+
+      {{#if instance.userName}}
+        {{instance.userName}}
+      {{else}}
+        Unknown
+      {{/if}}
+
+
+    {{/ember-tooltip}}
+    {{#if instance.userPicture}}
+      <img src="{{instance.userPicture}}">
+    {{else}}
+      <img src="https://via.placeholder.com/32x32?text=?">
+    {{/if}}
+  </div>
+</td>
+
+<td>
+  {{#link-to "instances.view" instance.id}}
+    <div class="resource">
+      <div class="resource-title">
+        {{instance.name}}
+      </div>
+      <div class="resource-description">
+        {{instance.description}}
+        <span class="image-name">{{if instance.description " - "}}{{instance.instanceType}}</span>
+      </div>
+    </div>
+  {{/link-to}}
+</td>
+
+<td>
+  <i class="state fa fa-fw fa-circle {{instance.state}}"></i> {{instance.state}}
+</td>
+
+<td>
+  {{instance.publicIp}}
+</td>
+
+<td>{{moment-from-now instance.created (now interval=1000)}}</td>
+
+
+<td>
+  {{#rl-dropdown-container class="aurora-dropdown-menu"}}
+
+    {{#rl-dropdown-toggle tagName="span" class="dropdown-title Open"}}
+      More <i class="fa fa-fw fa-angle-down"></i>
+    {{/rl-dropdown-toggle}}
+
+    {{#rl-dropdown tagName="div" class="menu-dropdown" closeOnChildClick=true}}
+
+      <ul class="menu-dropdownItems">
+
+        <li class={{if isStopped 'disabled is-disabled'}}>
+          <span {{action triggerInstanceEvent "stop"}}>Stop</span>
+        </li>
+
+        <li class={{if isRunning 'disabled is-disabled'}}>
+          <span {{action triggerInstanceEvent "start"}}>Start</span>
+        </li>
+
+        <li class="divider"></li>
+
+        <li>
+          <a href="#">Keys</a>
+        </li>
+
+      </ul>
+
+    {{/rl-dropdown}}
+  {{/rl-dropdown-container}}
+</td>

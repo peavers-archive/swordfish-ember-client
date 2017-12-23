@@ -1,0 +1,37 @@
+.auth0-lock-header {
+  display: none;
+}
+
+.auth0-lock-badge-bottom {
+  display: none;
+}
+
+.auth0-lock-overlay {
+  display: none;
+}
+
+.auth0-lock-widget {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 0 !important;
+  font-family: 'Proxima Nova', Georgia, sans-serif !important;
+}
+
+.auth0-lock.auth0-lock .auth0-lock-close-button, .auth0-lock.auth0-lock .auth0-lock-back-button {
+  top: -10px !important;
+  right: -10px !important;
+}
+
+.login-container {
+  .fa {
+    color: $blue-600;
+  }
+}
+
+.unlock {
+  color: $blue-600;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+}

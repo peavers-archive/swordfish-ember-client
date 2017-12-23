@@ -1,0 +1,58 @@
+<div class="section">
+  <div class="container">
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          {{#link-to "instances" class="navbar-item"}}
+           Instances
+          {{/link-to}}
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+
+            {{#rl-dropdown-container class="aurora-dropdown-menu"}}
+
+              {{#rl-dropdown-toggle tagName="div" class="dropdown-title Open button is-success"}}
+                Create <i class="fa fa-fw fa-angle-down"></i>
+              {{/rl-dropdown-toggle}}
+
+              {{#rl-dropdown tagName="div" class="menu-dropdown" closeOnChildClick=true}}
+
+                <ul class="menu-dropdownItems">
+                  <li>
+                    {{#link-to "instances.new"}}Instance{{/link-to}}
+                  </li>
+                </ul>
+
+              {{/rl-dropdown}}
+            {{/rl-dropdown-container}}
+
+          </div>
+
+          <div class="navbar-item">
+            {{#rl-dropdown-container class="aurora-dropdown-menu"}}
+
+              {{#rl-dropdown-toggle tagName="div" class="dropdown-title Open"}}
+                <div class="people-avatar">
+                  <img src="{{session.data.authenticated.profile.picture}}.png"><i
+                  class="fa fa-fw fa-angle-down"></i>
+                </div>
+              {{/rl-dropdown-toggle}}
+
+              {{#rl-dropdown tagName="div" class="menu-dropdown" closeOnChildClick=true}}
+                <ul class="menu-dropdownItems">
+                  <li>
+                    <a href="#" {{action "logout" }}>Logout</a>
+                  </li>
+                </ul>
+              {{/rl-dropdown}}
+            {{/rl-dropdown-container}}
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

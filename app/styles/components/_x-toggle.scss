@@ -1,0 +1,12 @@
+.x-toggle-container {
+  padding: 0;
+}
+
+.x-toggle-default.medium {
+  border-radius: 3px;
+  height: 30px;
+}
+
+.x-toggle:checked + .x-toggle-default.x-toggle-btn {
+  background: $success;
+}

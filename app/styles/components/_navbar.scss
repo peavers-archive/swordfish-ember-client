@@ -1,0 +1,59 @@
+.navbar {
+  border-bottom: 2px solid $grey-500;
+
+  .active {
+    color: $link;
+  }
+
+  .navbar-item {
+
+    &:hover {
+      color: $link;
+      background: #fff;
+    }
+
+  }
+
+  .aurora-dropdown-menu .dropdown-title {
+    border: none;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    display: block;
+    line-height: normal;
+    height: auto;
+
+    &:hover {
+      color: #fff;
+    }
+
+  }
+
+  .aurora-dropdown-menu .menu-dropdown {
+    top: calc(50% + 40px);
+  }
+
+  .navbar-item img {
+    max-height: none;
+  }
+
+  .people-avatar {
+
+    .fa-angle-down {
+      color: #bbb;
+      padding-top: 10px;
+      vertical-align: middle;
+    }
+
+    img {
+      border-radius: 50%;
+      height: 38px;
+      width: 38px;
+      box-shadow: 0 0 0 2px #fff;
+
+      position: relative;
+      vertical-align: top;
+      margin: 0;
+    }
+  }
+}

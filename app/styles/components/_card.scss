@@ -1,0 +1,49 @@
+.card {
+  margin-top: 10px;
+  font-size: 14px;
+  box-shadow: none;
+  color: #9c9c9c;
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+
+  height: 120px;
+
+  .card-header-title {
+    color: #9c9c9c;
+    font-weight: 400;
+  }
+
+  .card-content {
+    padding: 15px;
+  }
+
+  .content {
+    color: #9c9c9c;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: #f7f7f7;
+    border-color: #cbcbcb;
+  }
+}
+
+.selected {
+
+  .card {
+    border-color: $primary;
+    background: #ffffff;
+
+    .card-header {
+      border-color: $primary;
+    }
+
+    .card-header-title {
+      color: $primary;
+    }
+
+    .content {
+      color: $primary;
+    }
+  }
+}

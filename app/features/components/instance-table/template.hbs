@@ -1,0 +1,58 @@
+<div class="view-section">
+  <div class="level">
+    <div class="level-left">
+      <div class="level-item">
+        <div class="resource">
+          <div class="resource-title">
+            <h1 class="title">Instances</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-right">
+      {{#ember-tooltip}}
+        {{#if belongsToUser}}Showing personal instances{{else}}Showing all instances{{/if}}
+      {{/ember-tooltip}}
+      <div class="level-item">
+        <a class="button" {{action "triggerBelongsToUser"}}>
+    <span class="icon is-small">
+      {{#if belongsToUser}}
+        <i class="fa fa-user"></i>
+      {{else}}
+        <i class="fa fa-users"></i>
+      {{/if}}
+
+    </span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+{{#if filteredInstances}}
+
+  <table class="table instance-table">
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>State</th>
+      <th>IP Address</th>
+      <th>Launched</th>
+      <th></th>
+    </tr>
+
+    {{#each filteredInstances as |instance|}}
+      {{instance-table-item
+        instance=instance
+        triggerInstanceEvent='triggerInstanceEvent'
+        readOnly=readOnly
+      }}
+    {{/each}}
+
+  </table>
+{{else}}
+  {{instance-no-data}}
+{{/if}}
+

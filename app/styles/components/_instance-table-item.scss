@@ -1,0 +1,47 @@
+.instance-table-item {
+  height: 70px;
+  vertical-align: middle;
+
+  .people-avatar {
+    width: 32px;
+
+    img {
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px #fff;
+      position: relative;
+      vertical-align: top;
+      margin: 0;
+    }
+  }
+
+  .state {
+    font-size: 12px;
+  }
+
+  .resource {
+
+    .resource-title {
+      line-height: 1.4rem;
+      margin-bottom: 2px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+
+    .resource-description {
+      color: #676767;
+      line-height: .8rem;
+      font-size: .8rem;
+      clear: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .image-name {
+      color: #999;
+    }
+  }
+
+}
