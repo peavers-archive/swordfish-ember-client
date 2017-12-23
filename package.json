@@ -12,7 +12,8 @@
   "repository": "",
   "scripts": {
     "build": "ember build",
-    "start": "ember serve"
+    "start": "ember serve",
+    "test": ""
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.6.0",
