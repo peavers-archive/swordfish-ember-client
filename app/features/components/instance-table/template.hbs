@@ -11,9 +11,9 @@
     </div>
 
     <div class="level-right">
-      {{#ember-tooltip}}
+      {{#attach-tooltip animation="shift" lazyRender="true"}}
         {{#if belongsToUser}}Showing personal instances{{else}}Showing all instances{{/if}}
-      {{/ember-tooltip}}
+      {{/attach-tooltip}}
       <div class="level-item">
         <a class="button" {{action "triggerBelongsToUser"}}>
     <span class="icon is-small">
@@ -22,13 +22,10 @@
       {{else}}
         <i class="fa fa-users"></i>
       {{/if}}
-
     </span>
         </a>
       </div>
-
     </div>
-
   </div>
 </div>
 {{#if filteredInstances}}
