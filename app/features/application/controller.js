@@ -33,15 +33,16 @@ export default Controller.extend(EmberPusher.Bindings, {
 
     login() {
       const lockOptions = {
+        avatar: null,
+        container: "login-container",
+        oidcConformant: true,
         auth: {
           audience: "http://swordfish-service",
           params: {
             scope: 'openid profile'
           }
-        },
-        oidcConformant: true,
+        }
       };
-
       get(this, 'session').authenticate('authenticator:auth0-lock', lockOptions);
     },
 

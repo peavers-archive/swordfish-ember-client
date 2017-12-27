@@ -1,24 +1,81 @@
+.auth0-lock-widget-container {
+  border-radius: 0 !important;
+}
+
+.auth0-lock-cred-pane {
+  border-radius: 0 !important;
+}
+
 .auth0-lock-header {
   display: none;
 }
 
-.auth0-lock-badge-bottom {
-  display: none;
-}
-
-.auth0-lock-overlay {
-  display: none;
-}
-
 .auth0-lock-widget {
-  box-shadow: 4px 4px 32px rgba(0, 0, 0, 0.3) !important;
+  min-width: 450px;
   font-family: 'Proxima Nova', Georgia, sans-serif !important;
+  background: #FFFFFF !important;
+  border-radius: 3px !important;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1) !important;
+  box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
+  color: #172B4D !important;
+  padding: 48px !important;
 }
 
 .auth0-lock.auth0-lock .auth0-lock-close-button, .auth0-lock.auth0-lock .auth0-lock-back-button {
   display: none;
 }
 
-.auth0-lock-submit {
-  background: $primary !important;
+.auth0-lock.auth0-lock .auth0-lock-submit {
+  background: #0747A6 !important;
+  transition: none !important;
+  font-size: 14px !important;
+  border: none !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+
+  .icon-text {
+    display: none;
+  }
+}
+
+.auth0-lock.auth0-lock .auth0-lock-submit {
+  transition: none !important;
+  font-size: 14px !important;
+  border: none !important;
+}
+
+.auth0-label-submit {
+  border: none !important;
+  transition: none !important;
+  font-size: 14px !important;
+}
+
+.auth0-lock.auth0-lock .auth0-lock-submit:hover:not([disabled]) span {
+  transform: scale(1) !important;
+}
+
+.login {
+  @import url('https://fonts.googleapis.com/css?family=Passion+One');
+
+  padding-top: 100px;
+  background: #0747A6;
+
+  h1 {
+    font-family: 'Passion One', cursive;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 42px;
+  }
+
+  h2 {
+    color: #DEEBFF;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    margin-top: 38px;
+    margin-bottom: 38px;
+  }
+
 }

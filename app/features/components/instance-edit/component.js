@@ -1,14 +1,23 @@
 import Component from '@ember/component';
 import {inject as service} from '@ember/service';
-import {get, set} from '@ember/object';
+import {computed, get, set} from '@ember/object';
 
 export default Component.extend({
   session: service(),
   classNames: ['instance-edit'],
 
-  actions: {
+  namePrefix: computed('instance.production', function () {
+    if (get(this, 'instance.production') === true) {
+      return "production";
+    } else {
+      return "development"
+    }
+  }),
 
+  actions: {
     save() {
+      this._buildName();
+
       this.sendAction('save');
     },
 
@@ -28,5 +37,17 @@ export default Component.extend({
       set(instance, 'instanceType', instanceType);
     },
   },
+
+  /**
+   * Appends the prefix to the name
+   *
+   * @private
+   */
+  _buildName() {
+    const instance = get(this, 'instance');
+    const prefix = get(this, 'namePrefix');
+    const name = get(this, 'instance.name');
+    set(instance, 'name', name + "-" + prefix);
+  }
 
 });

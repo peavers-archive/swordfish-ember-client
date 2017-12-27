@@ -12,6 +12,7 @@ export default Model.extend({
   state: attr('string'),
   publicIp: attr('string'),
   privateIp: attr('string'),
+
   production: attr('boolean'),
   staticIp: attr('boolean'),
 

@@ -12,12 +12,11 @@
       <div class="control">
         <div class="level">
           <div class="level-item">
-            {{input type="text" class="input" placeholder=session.data.authenticated.profile.nickname
-                    disabled=true}}
+            {{input type="text" value=instance.name class="input" placeholder="Custom"}}
           </div>
           <div class="spacer" style="margin: 0 10px">-</div>
           <div class="level-item">
-            {{input type="text" value=instance.name class="input" placeholder="Custom"}}
+            {{input type="text" class="input" value=namePrefix disabled=true}}
           </div>
         </div>
       </div>
@@ -103,6 +102,45 @@
     }}
   </div>
 </div>
+
+<div class="view-section">
+  <div class="is-heading">
+    <h1 class="title is-4">Flags/Switches</h1>
+    <h2 class="subtitle is-6">
+      Controls events on how Swordfish manges the server.
+    </h2>
+  </div>
+  <div class="columns is-multiline">
+    <div class="column is-12">
+      <div class="is-full is-toggle">
+        <label class="label">Production server</label>
+        {{x-toggle
+          value=instance.production
+          showLabels=false
+          onLabel='Enabled::true'
+          offLabel='Disabled::false'
+          onToggle=(action (mut instance.production))
+        }}
+        <span class="help">Production servers are not turned off automatically.</span>
+      </div>
+    </div>
+
+    <div class="column is-12">
+      <div class="is-full is-toggle">
+        <label class="label">Static IP</label>
+        {{x-toggle
+          value=instance.staticIp
+          showLabels=false
+          onLabel='Enabled::true'
+          offLabel='Disabled::false'
+          onToggle=(action (mut instance.staticIp))
+        }}
+        <span class="help">IP address won't change after restart.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div class="view-section">
   <button class="button is-primary is-min-width-button" {{action "save"}}>Build</button>
