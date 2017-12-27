@@ -13,14 +13,7 @@ Router.map(function () {
     this.route('new');
     this.route('all');
   });
-  this.route('settings');
-  this.route('docs');
-  this.route('login');
   this.route('error');
-  this.route('admin', function() {
-    this.route('settings');
-    this.route('users');
-  });
 });
 
 export default Router;
