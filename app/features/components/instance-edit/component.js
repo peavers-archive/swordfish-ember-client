@@ -1,8 +1,9 @@
 import Component from '@ember/component';
-import { set, get } from '@ember/object';
+import {inject as service} from '@ember/service';
+import {get, set} from '@ember/object';
 
 export default Component.extend({
-
+  session: service(),
   classNames: ['instance-edit'],
 
   actions: {

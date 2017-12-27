@@ -12,19 +12,12 @@
       <div class="control">
         <div class="level">
           <div class="level-item">
-            {{input type="text" value=instance.name class="input" placeholder="Name of instance"}}
+            {{input type="text" class="input" placeholder=session.data.authenticated.profile.nickname
+                    disabled=true}}
           </div>
-        </div>
-      </div>
-      <span class="help"></span>
-    </div>
-
-    <div class="column is-12">
-      <label class="label">Description</label>
-      <div class="control">
-        <div class="level">
+          <div class="spacer" style="margin: 0 10px">-</div>
           <div class="level-item">
-            {{input type="text" value=instance.description class="input" placeholder="Description of instance"}}
+            {{input type="text" value=instance.name class="input" placeholder="Custom"}}
           </div>
         </div>
       </div>
@@ -41,22 +34,6 @@
     </h2>
   </div>
   <div class="columns is-multiline">
-    {{aws-image
-      selectedImage=selectedImage
-      toggleActiveImage='toggleActiveImage'
-      title="Dev server"
-      description="Version 7.0.0"
-      ami="ami-b93422da"
-    }}
-
-    {{aws-image
-      selectedImage=selectedImage
-      toggleActiveImage='toggleActiveImage'
-      title="Docker"
-      description="Includes docker-compose"
-      ami="ami-75d7c316"
-    }}
-
     {{aws-image
       selectedImage=selectedImage
       toggleActiveImage='toggleActiveImage'
