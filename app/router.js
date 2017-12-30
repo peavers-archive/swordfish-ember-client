@@ -13,6 +13,7 @@ Router.map(function () {
     this.route('new');
     this.route('all');
   });
+
   this.route('error');
 });
 

@@ -3,4 +3,10 @@ import ApplicationRouteMixin from 'ember-simple-auth-auth0/mixins/application-ro
 
 export default Route.extend(ApplicationRouteMixin, {
 
+  actions: {
+    error() {
+      this.transitionTo('error');
+    }
+  }
+
 });

@@ -7,17 +7,12 @@ export default Component.extend({
   classNames: ['instance-edit'],
 
   namePrefix: computed('instance.production', function () {
-    if (get(this, 'instance.production') === true) {
-      return "production";
-    } else {
-      return "development"
-    }
+    return get(this, 'instance.production') === true ? "production" : "development";
   }),
 
   actions: {
     save() {
-      this._buildName();
-
+      this._createName();
       this.sendAction('save');
     },
 
@@ -43,11 +38,10 @@ export default Component.extend({
    *
    * @private
    */
-  _buildName() {
+  _createName() {
     const instance = get(this, 'instance');
     const prefix = get(this, 'namePrefix');
     const name = get(this, 'instance.name');
     set(instance, 'name', name + "-" + prefix);
   }
-
 });

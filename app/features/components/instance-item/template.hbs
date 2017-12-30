@@ -98,102 +98,31 @@
   </table>
 </div>
 
-{{#if developmentServer}}
-  <div class="view-section">
-    <div class="is-heading">
-      <h1 class="title is-4">Restore</h1>
-      <h2 class="subtitle is-6">
-        Load database and assets CWP to this server
-      </h2>
-    </div>
-
-    <div class="columns">
-      <div class="column is-6">
-        {{#power-select
-          placeholder="Select stack"
-          options=stacks
-          searchEnabled=false
-          selected=selectedStack
-          onchange=(action "toggleActiveStack") as |stack|}}
-          {{stack.name}}
-        {{/power-select}}
-      </div>
-    </div>
-
-    <div class="columns">
-      <div class="column is-2">
-        {{stack-environment
-          selectedEnvironment=selectedEnvironment
-          toggleActiveEnvironment='toggleActiveEnvironment'
-          title="Production"
-          description="Probably this"
-          type="prod"
-          disabled=disabled
-        }}
-      </div>
-
-      <div class="column is-2">
-        {{stack-environment
-          selectedEnvironment=selectedEnvironment
-          toggleActiveEnvironment='toggleActiveEnvironment'
-          title="UAT"
-          description="Probably not this"
-          type="uat"
-          disabled=disabled
-        }}
-      </div>
-    </div>
-
-    <div class="columns">
-      <div class="column is-2">
-        {{stack-mode
-          selectedMode=selectedMode
-          toggleActiveMode='toggleActiveMode'
-          title="Database"
-          description="Just the database"
-          type="db"
-          disabled=disabled
-        }}
-      </div>
-
-      <div class="column is-2">
-        {{stack-mode
-          selectedMode=selectedMode
-          toggleActiveMode='toggleActiveMode'
-          title="Assets"
-          description="Files and whatnot"
-          type="assets"
-          disabled=disabled
-        }}
-      </div>
-
-      <div class="column is-2">
-        {{stack-mode
-          selectedMode=selectedMode
-          toggleActiveMode='toggleActiveMode'
-          title="All"
-          description="Everything!"
-          type="all"
-          disabled=disabled
-        }}
-      </div>
-    </div>
-
-    {{#if "restoring"}}
-      <button class="button is-primary is-min-width-button" disabled>Building</button>
-    {{else}}
-      <button class="button is-primary is-min-width-button" {{action "restore"}}>Restore</button>
-    {{/if}}
-
-
+<div class="view-section">
+  <div class="is-heading">
+    <h1 class="title is-4">Stacks</h1>
+    <h2 class="subtitle is-6">
+      Install, update, and maintain stacks on this server
+    </h2>
   </div>
-{{/if}}
+
+  <div class="columns is-multiline">
+    {{#each stacks as |stack|}}
+      {{instance-stack
+        restore="restore"
+        stackEvent=stackEvent
+        stack=stack
+        instanceId=instance.instanceId
+      }}
+    {{/each}}
+  </div>
+</div>
 
 <div class="view-section">
   <div class="is-heading">
     <h1 class="title is-4">Danger zone</h1>
     <h2 class="subtitle is-6">
-      Terminating <strong>{{instance.name}}</strong> is a permanent change that can not be undone.
+      Terminating <strong>{{instance.name}}</strong> is a permanent change that cannot be undone.
     </h2>
   </div>
 

@@ -1,0 +1,59 @@
+<div class="column is-2">
+  <div class="card restore-card is-fullwidth">
+
+    <header class="card-header card-header-title">
+      {{#rl-dropdown-container class="aurora-dropdown-menu is-fullwidth"}}
+        {{#rl-dropdown-toggle tagName="span" class="dropdown-title Open"}}
+          {{stack.name}}
+        {{/rl-dropdown-toggle}}
+        {{#rl-dropdown tagName="div" class="menu-dropdown" closeOnChildClick=true}}
+          <ul class="menu-dropdownItems">
+            <li class="is-disabled">
+              <span>PRODUCTION</span>
+            </li>
+
+            <li>
+              <span {{action "triggerRestoreEvent" stack.name "assets" "prod"}}>Assets</span>
+            </li>
+
+            <li>
+              <span {{action "triggerRestoreEvent" stack.name  "db" "prod"}}>Database</span>
+            </li>
+
+            <li>
+              <span {{action "triggerRestoreEvent" stack.name  "all" "prod"}}>Everything</span>
+            </li>
+
+            <li class="divider"></li>
+
+            <li class="is-disabled">
+              <span>USER TESTING</span>
+            </li>
+
+            <li>
+              <span {{action "triggerRestoreEvent" stack.name  "assets" "uat"}}>Assets</span>
+            </li>
+
+            <li>
+              <span {{action "triggerRestoreEvent" stack.name  "db" "uat"}}>Database</span>
+            </li>
+
+            <li>
+              <span {{action "triggerRestoreEvent" stack.name  "all" "uat"}}>Everything</span>
+            </li>
+
+            <li class="divider"></li>
+          </ul>
+        {{/rl-dropdown}}
+      {{/rl-dropdown-container}}
+    </header>
+
+    <div class="card-content">
+      <div class="content has-text-centered">
+        <p>
+          {{restoreState}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

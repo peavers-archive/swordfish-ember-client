@@ -1,0 +1,28 @@
+.restore-card {
+
+  &:hover {
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    cursor: default;
+  }
+
+  .aurora-dropdown-menu {
+    width: 100%;
+    text-align: center;
+  }
+
+  .aurora-dropdown-menu .dropdown-title {
+    text-align: center;
+    color: #676767;
+
+    &:hover {
+      color: $link;
+    }
+
+  }
+
+  .aurora-dropdown-menu .menu-dropdown {
+    margin: 0 0 25px 0;
+  }
+
+}

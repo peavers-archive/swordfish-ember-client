@@ -26,6 +26,8 @@ module.exports = function (environment) {
 
   if (environment === 'development') {
     ENV.APP.SWORDFISH = 'http://localhost:8080';
+    ENV.APP.PUSHER_KEY = process.env.DEV_PUSHER_KEY;
+    ENV.APP.PUSHER_SECRET = process.env.DEV_PUSHER_SECRET;
   }
 
   return ENV;

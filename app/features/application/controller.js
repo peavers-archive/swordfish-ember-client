@@ -8,7 +8,7 @@ export default Controller.extend(EmberPusher.Bindings, {
   pusher: service(),
 
   PUSHER_SUBSCRIPTIONS: {
-    restore_event: ['restore_info', 'restore_success'],
+    restore_event: ['restore_info', 'restore_success', 'restore_error'],
     server_refresh: ['server_refresh']
   },
 
@@ -31,11 +31,16 @@ export default Controller.extend(EmberPusher.Bindings, {
       get(this, 'notifications').success(data);
     },
 
+    restoreError(data) {
+      get(this, 'notifications').error(data);
+    },
+
     login() {
       const lockOptions = {
         avatar: null,
         container: "login-container",
         oidcConformant: true,
+        hashCleanup: true,
         auth: {
           audience: "http://swordfish-service",
           params: {
