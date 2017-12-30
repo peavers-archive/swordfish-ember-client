@@ -8,8 +8,6 @@ export default Route.extend(AuthenticatedRouteMixin, {
 
   ajax: Ember.inject.service(),
 
-  restoring: false,
-
   model(params) {
     return RSVP.hash({
       instance: get(this, 'store').findRecord('instance', params.instance_id),

@@ -37,7 +37,7 @@
   {{instance.publicIp}}
 </td>
 
-<td>{{moment-from-now instance.created (now interval=1000)}}</td>
+<td>{{instance.created}}</td>
 
 
 <td>
@@ -62,7 +62,9 @@
         <li class="divider"></li>
 
         <li>
-          <a href="#">Keys</a>
+          <a download="{{instance.keyName}}.pem" href="data:text/plain;charset=UTF-8,{{instance.keyBlob}}">
+            SSH Key
+          </a>
         </li>
 
       </ul>

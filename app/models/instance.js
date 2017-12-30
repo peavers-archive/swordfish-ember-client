@@ -7,6 +7,7 @@ export default Model.extend({
   instanceType: attr('string'),
   imageId: attr('string'),
   keyName: attr('string'),
+  keyBlob: attr('string'),
   subnetId: attr('string'),
   instanceId: attr('string'),
   state: attr('string'),
@@ -16,7 +17,7 @@ export default Model.extend({
   production: attr('boolean'),
   staticIp: attr('boolean'),
 
-  created:attr('date'),
+  created: attr('date'),
 
   swordfishCommand: attr("string"),
 
