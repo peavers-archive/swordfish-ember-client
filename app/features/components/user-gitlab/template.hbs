@@ -1,0 +1,43 @@
+<div class="view-section">
+  <div class="is-heading">
+    <h1 class="title is-4">Gitlab</h1>
+    <h2 class="subtitle is-6">
+      Secure your username and password here so your dev server can act as you.
+    </h2>
+  </div>
+
+  <form>
+    <div class="columns is-multiline">
+      <div class="column is-12">
+        <label class="label">Username</label>
+        <div class="control">
+          <div class="level">
+            <div class="level-item">
+              {{input type="text" value=user.gitlabUsername class="input" autocomplete="username"
+                      placeholder="Gitlab username"}}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="column is-12">
+        <label class="label">Password</label>
+        <div class="control">
+          <div class="level">
+            <div class="level-item">
+              {{input type="password" value=user.gitlabPassword class="input" placeholder="Gitlab password"
+                      autocomplete="current-password"}}
+            </div>
+          </div>
+
+          <button class="button is-primary is-min-width-button is-pulled-right" {{action "saveGitlab"}}>Sync</button>
+        </div>
+
+      </div>
+
+
+    </div>
+  </form>
+
+</div>
