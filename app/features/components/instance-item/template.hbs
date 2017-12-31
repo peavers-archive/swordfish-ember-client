@@ -70,8 +70,8 @@
       <tr>
         <td>Key</td>
         <td>
-          <a
-            href="https://s3-ap-southeast-2.amazonaws.com/swordfish-keys/silverstripe-base.pem">{{instance.keyName}}</a>
+          <a download="{{instance.keyName}}.pem"
+             href="data:text/plain;charset=UTF-8,{{instance.keyBlob}}">{{instance.keyName}}.pem</a>
         </td>
       </tr>
     {{/if}}
