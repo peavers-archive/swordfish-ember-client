@@ -2,7 +2,7 @@
   <div class="is-heading">
     <h1 class="title is-4">Picture</h1>
     <h2 class="subtitle is-6">
-      Replace your generic letters with something a little classier
+      Replace your generic letters with something a little classier.
     </h2>
   </div>
 
@@ -13,12 +13,12 @@
         <div class="level">
           <div class="level-item">
             {{input type="text" value=user.picture class="input"
-                    placeholder="http://"}}
+                    placeholder="https://"}}
           </div>
         </div>
 
         <button class="button is-primary is-min-width-button is-pulled-right" {{action "savePicture"}}>Sync</button>
-
+        <span class="help">You'll need to logout for your avatar to change, and your image next to your instances will update with the next AWS sync (every 5 minutes)</span>
       </div>
 
     </div>

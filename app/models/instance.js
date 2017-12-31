@@ -24,4 +24,6 @@ export default Model.extend({
   userId: attr('string'),
   userName: attr('string'),
   userPicture: attr('string'),
+
+  auth0User: attr(),
 });
