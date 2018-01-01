@@ -1,9 +1,11 @@
 import Route from '@ember/routing/route';
-import ApplicationRouteMixin from 'ember-simple-auth-auth0/mixins/application-route-mixin';
+import {inject as service} from '@ember/service';
 import {get} from '@ember/object';
+import UnauthenticatedRouteMixin from 'ember-simple-auth/mixins/unauthenticated-route-mixin';
 import config from "../../config/environment";
 
-export default Route.extend(ApplicationRouteMixin, {
+export default Route.extend(UnauthenticatedRouteMixin, {
+  session: service(),
 
   actions: {
     login() {

@@ -45,7 +45,6 @@
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.0.0",
     "ember-moment": "^7.5.0",
-    "ember-power-select": "^1.10.4",
     "ember-pusher": "^1.1.0",
     "ember-resolver": "^4.5.0",
     "ember-rl-dropdown": "^0.10.1",
@@ -61,7 +60,6 @@
   },
   "dependencies": {
     "bulma": "^0.6.1",
-    "ember-cli-sass": "^7.1.1",
-    "symlink-or-copy": "^1.1.8"
+    "ember-cli-sass": "^7.1.1"
   }
 }

@@ -22,22 +22,6 @@ export default Controller.extend(EmberPusher.Bindings, {
       get(this, 'store').pushPayload(JSON.parse(data));
     },
 
-    login() {
-      const lockOptions = {
-        avatar: null,
-        container: "login-container",
-        oidcConformant: true,
-        hashCleanup: true,
-        auth: {
-          audience: "http://swordfish-service",
-          params: {
-            scope: 'openid profile'
-          }
-        }
-      };
-      get(this, 'session').authenticate('authenticator:auth0-lock', lockOptions);
-    },
-
     logout() {
       get(this, 'session').invalidate();
     }

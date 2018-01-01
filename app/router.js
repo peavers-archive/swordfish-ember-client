@@ -20,6 +20,7 @@ Router.map(function () {
     this.route('settings');
   });
   this.route('loading');
+  this.route('login');
 });
 
 export default Router;
