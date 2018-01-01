@@ -23,7 +23,7 @@ export default Controller.extend(EmberPusher.Bindings, {
       const attributes = json.data.attributes;
       const id = attributes['project-id'];
 
-      Ember.$(`#${id}`).addClass('is-restoring').removeClass('is-restoring-queued');
+      Ember.$(`#${id}`).addClass('is-restoring').removeClass(['is-restoring-queued', 'is-restoring-done']);
     },
 
     restoreSuccess(data) {
