@@ -1,5 +1,5 @@
 <div class="column is-2">
-  <div class="card restore-card is-fullwidth">
+  <div id="{{stack.id}}" class="card restore-card is-fullwidth">
 
     <header class="card-header card-header-title">
       {{#rl-dropdown-container class="aurora-dropdown-menu is-fullwidth"}}
@@ -50,9 +50,12 @@
 
     <div class="card-content">
       <div class="content has-text-centered">
-        <p>
-          {{restoreState}}
-        </p>
+
+
+        <div class="is-loading">
+        </div>
+
+
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 import {get, set} from '@ember/object';
+import Ember from "ember";
 
 export default Component.extend({
 
@@ -7,6 +8,8 @@ export default Component.extend({
 
   actions: {
     triggerRestoreEvent(projectId, mode, environment) {
+      Ember.$(`#${projectId}`).addClass('is-restoring-queued');
+
       set(this.get('stackEvent'), 'instanceId', get(this, "instanceId"));
       set(this.get('stackEvent'), 'projectId', projectId);
       set(this.get('stackEvent'), 'mode', mode);

@@ -1,4 +1,79 @@
+$restoring: $info;
+$queued: $purple-500;
+$done: $success;
+
 .restore-card {
+
+  transition: all ease 1s;
+
+  &.is-restoring {
+    border: 1px solid $restoring !important;
+
+    &:after {
+      margin-top: 10px;
+      -webkit-animation: spinAround 500ms infinite linear;
+      animation: spinAround 500ms infinite linear;
+      border: 2px solid $info;
+      border-radius: 290486px;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      content: "";
+      display: inline-block;
+      height: 25px;
+      width: 25px;
+      position: absolute;
+      top: 50%;
+      left: 62px;
+    }
+
+    .aurora-dropdown-menu .dropdown-title {
+      color: $restoring !important;
+    }
+
+  }
+
+  &.is-restoring-queued {
+    border: 1px solid $queued !important;
+
+    &:after {
+      font-family: FontAwesome, serif;
+      content: '\f017';
+      height: 25px;
+      width: 25px;
+      position: absolute;
+      top: 50%;
+      left: 62px;
+      font-size: 25px;
+      color: $queued;
+    }
+
+    .aurora-dropdown-menu .dropdown-title {
+      color: $queued !important;
+    }
+
+  }
+
+  &.is-restoring-done {
+    border: 1px solid $done !important;
+
+    &:after {
+      font-family: FontAwesome, serif;
+      content: '\f00c';
+      height: 25px;
+      width: 25px;
+      position: absolute;
+      top: 50%;
+      left: 62px;
+      font-size: 25px;
+      color: $done;
+    }
+
+    .aurora-dropdown-menu .dropdown-title {
+      color: $done !important;
+    }
+  }
+
+
 
   &:hover {
     background: #fff;
@@ -18,7 +93,6 @@
     &:hover {
       color: $link;
     }
-
   }
 
   .aurora-dropdown-menu .menu-dropdown {

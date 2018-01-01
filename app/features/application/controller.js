@@ -8,7 +8,6 @@ export default Controller.extend(EmberPusher.Bindings, {
   pusher: service(),
 
   PUSHER_SUBSCRIPTIONS: {
-    restore_event: ['restore_info', 'restore_success', 'restore_error'],
     server_refresh: ['server_refresh']
   },
 
@@ -21,18 +20,6 @@ export default Controller.extend(EmberPusher.Bindings, {
   actions: {
     serverRefresh(data) {
       get(this, 'store').pushPayload(JSON.parse(data));
-    },
-
-    restoreInfo(data) {
-      get(this, 'notifications').info(data);
-    },
-
-    restoreSuccess(data) {
-      get(this, 'notifications').success(data);
-    },
-
-    restoreError(data) {
-      get(this, 'notifications').error(data);
     },
 
     login() {
