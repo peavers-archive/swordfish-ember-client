@@ -19,6 +19,7 @@ Router.map(function () {
   this.route('users', function () {
     this.route('settings');
   });
+  this.route('loading');
 });
 
 export default Router;
