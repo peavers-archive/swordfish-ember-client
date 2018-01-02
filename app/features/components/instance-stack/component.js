@@ -8,7 +8,7 @@ export default Component.extend({
 
   actions: {
     triggerRestoreEvent(projectId, mode, environment) {
-      Ember.$(`#${projectId}`).addClass('is-restoring-queued');
+      Ember.$(`#${projectId}`).addClass('is-restoring-queued').removeClass('is-restoring-done is-restoring');
 
       set(this.get('stackEvent'), 'instanceId', get(this, "instanceId"));
       set(this.get('stackEvent'), 'projectId', projectId);
