@@ -3,9 +3,9 @@ import {inject as service} from '@ember/service';
 import {get} from '@ember/object';
 import EmberPusher from "ember-pusher";
 
-export default Controller.extend(EmberPusher.Bindings, {
+export default Controller.extend({
   session: service(),
-  pusher: service(),
+
 
   PUSHER_SUBSCRIPTIONS: {
     server_refresh: ['server_refresh']

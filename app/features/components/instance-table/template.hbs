@@ -28,7 +28,7 @@
     </div>
   </div>
 </div>
-{{#if filteredInstances}}
+{{#if instances}}
 
   <table class="table instance-table">
     <tr>
@@ -40,7 +40,7 @@
       <th></th>
     </tr>
 
-    {{#each filteredInstances as |instance|}}
+    {{#each instances as |instance|}}
       {{instance-table-item
         instance=instance
         triggerInstanceEvent='triggerInstanceEvent'

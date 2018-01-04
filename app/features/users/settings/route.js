@@ -29,8 +29,8 @@ export default Route.extend(AuthenticatedRouteMixin, {
       this.controller.get('user').rollbackAttributes();
     },
 
-    savePicture(user) {
-      return get(this, 'ajax').post('/users/picture', {
+    saveAws(user) {
+      return get(this, 'ajax').post('/users/aws', {
         data: JSON.stringify(user),
         context: this,
       });
@@ -41,7 +41,14 @@ export default Route.extend(AuthenticatedRouteMixin, {
         data: JSON.stringify(user),
         context: this,
       });
-    }
+    },
+
+    savePicture(user) {
+      return get(this, 'ajax').post('/users/picture', {
+        data: JSON.stringify(user),
+        context: this,
+      });
+    },
   },
 
 });
