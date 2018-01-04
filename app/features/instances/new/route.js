@@ -13,6 +13,9 @@ export default Route.extend(AuthenticatedRouteMixin, {
       instance: get(this, 'store').createRecord('instance', {
         swordfishCommand: "create"
       }),
+
+      securityGroups: get(this, 'store').findAll('security-group')
+
     });
   },
 

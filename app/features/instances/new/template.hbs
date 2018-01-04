@@ -2,7 +2,11 @@
   <div class="container">
     <h1 class="title">Create</h1>
 
-    {{instance-edit instance=instance save='save'}}
+    {{instance-edit
+      instance=instance
+      securityGroups=securityGroups
+      save='save'
+    }}
 
   </div>
 </div>

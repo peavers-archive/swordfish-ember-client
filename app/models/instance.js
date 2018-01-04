@@ -1,5 +1,6 @@
 import attr from "ember-data/attr";
 import Model from "ember-data/model";
+import DS from 'ember-data';
 
 export default Model.extend({
   name: attr('string'),
@@ -13,6 +14,7 @@ export default Model.extend({
   state: attr('string'),
   publicIp: attr('string'),
   privateIp: attr('string'),
+  securityGroupId: attr('string'),
 
   production: attr('boolean'),
   staticIp: attr('boolean'),
@@ -26,4 +28,7 @@ export default Model.extend({
   userPicture: attr('string'),
 
   auth0User: attr(),
+
+  securityGroups: DS.hasMany('security-group'),
+
 });

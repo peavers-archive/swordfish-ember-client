@@ -105,6 +105,30 @@
 
 <div class="view-section">
   <div class="is-heading">
+    <h1 class="title is-4">Security Groups</h1>
+    <h2 class="subtitle is-6">
+      Choose wisely...
+    </h2>
+  </div>
+
+  <div class="columns">
+    <div class="column is-6">
+      {{#power-select
+        placeholder="Select security group"
+        options=securityGroups
+        searchEnabled=false
+        selected=selectedSecurityGroup
+        onchange=(action "toggleSecurityGroup") as |securityGroup|}}
+        {{securityGroup.groupName}}
+      {{/power-select}}
+    </div>
+  </div>
+
+</div>
+
+
+<div class="view-section">
+  <div class="is-heading">
     <h1 class="title is-4">Flags/Switches</h1>
     <h2 class="subtitle is-6">
       Controls events on how Swordfish manges the server.

@@ -5,7 +5,6 @@ import {computed, get, set} from '@ember/object';
 export default Component.extend({
   session: service(),
   classNames: ['instance-edit'],
-
   namePrefix: computed('instance.production', function () {
     return get(this, 'instance.production') === true ? "production" : "development";
   }),
@@ -31,6 +30,12 @@ export default Component.extend({
       set(this, 'selectedType', type);
       set(instance, 'instanceType', instanceType);
     },
+
+    toggleSecurityGroup(data) {
+      const instance = get(this, 'instance');
+      set(this, 'selectedSecurityGroup', data);
+      set(instance, 'securityGroupId', data.get('groupId'));
+    }
   },
 
   /**
