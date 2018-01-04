@@ -5,16 +5,10 @@ import config from "../../config/environment";
 
 export default Route.extend(ApplicationRouteMixin, {
 
-  isCorrectRouteActive: Ember.computed.equal('controllers.application.currentRouteName', '#error'),
-
-  didRender() {
-
-  },
-
   actions: {
     error(error, transition) {
       if (error) {
-        return this.transitionTo('error');
+        return this.replaceWith('error');
       }
     },
 

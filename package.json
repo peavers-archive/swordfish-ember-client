@@ -50,7 +50,7 @@
     "ember-resolver": "^4.5.0",
     "ember-rl-dropdown": "^0.10.1",
     "ember-simple-auth": "^1.4.0",
-    "ember-simple-auth-auth0": "^3.1.0",
+    "ember-simple-auth-auth0": "git+https://github.com/auth0-community/ember-simple-auth-auth0#develop",
     "ember-source": "~2.18.0",
     "ember-toggle": "^5.2.1",
     "loader.js": "^4.6.0",

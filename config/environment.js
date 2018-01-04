@@ -11,7 +11,7 @@ module.exports = function (environment) {
     locationType: 'auto',
 
     pace: {
-      color: 'black',
+      color: 'orange',
     },
 
     APP: {

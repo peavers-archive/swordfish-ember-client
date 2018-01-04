@@ -42,13 +42,6 @@ export default Route.extend(AuthenticatedRouteMixin, {
         context: this,
       });
     },
-
-    savePicture(user) {
-      return get(this, 'ajax').post('/users/picture', {
-        data: JSON.stringify(user),
-        context: this,
-      });
-    },
   },
 
-});
+})
