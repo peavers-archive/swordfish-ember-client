@@ -1,12 +1,7 @@
 {{#if session.isAuthenticated}}
-
   {{site-header logout='logout' session=session}}
-
-  {{notification-container position="top-right"}}
-
 {{else}}
 
-  {{site-login login='login'}}
 
 {{/if}}
 

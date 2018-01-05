@@ -7,6 +7,7 @@ export default AjaxService.extend({
   host: config.APP.SWORDFISH,
   dataType: 'json',
   contentType: 'application/json',
+
   headers: Ember.computed('session.authenticated.accessToken', {
     get() {
       let headers = {};

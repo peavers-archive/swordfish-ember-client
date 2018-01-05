@@ -1,10 +1,9 @@
 import {inject as service} from '@ember/service';
 import Component from '@ember/component';
-import {computed} from '@ember/object';
+import {get, computed} from '@ember/object';
 
 export default Component.extend({
   session: service(),
-
   belongsToUser: true,
 
   filteredInstances: computed('instances.@each', 'belongsToUser', function () {
