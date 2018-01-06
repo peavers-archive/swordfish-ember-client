@@ -25,6 +25,10 @@ export default Component.extend({
 
     triggerBelongsToUser() {
       this.toggleProperty('belongsToUser');
+    },
+
+    triggerRefreshAll() {
+      this.sendAction("triggerRefreshAll");
     }
   }
 

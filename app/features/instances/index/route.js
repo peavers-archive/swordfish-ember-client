@@ -2,8 +2,11 @@ import Route from '@ember/routing/route';
 import {get} from '@ember/object';
 import RSVP from "rsvp";
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
+import Ember from "ember";
 
 export default Route.extend(AuthenticatedRouteMixin, {
+
+  ajax: Ember.inject.service(),
 
   beforeModel() {
     if (get(this, 'session.data.authenticated')) {
@@ -24,8 +27,6 @@ export default Route.extend(AuthenticatedRouteMixin, {
         this.transitionTo('setup')
       }
 
-      return {"aws_key": awsKey, "aws_secret": awsSecret, "aws_region": awsRegion}
-
     } catch (error) {
       // ignore
     }
@@ -45,6 +46,10 @@ export default Route.extend(AuthenticatedRouteMixin, {
     triggerInstanceEvent(instance) {
       instance.save();
     },
+
+    triggerRefreshAll() {
+      return get(this, 'ajax').request('/instances/refresh-all');
+    }
   }
 
 });
