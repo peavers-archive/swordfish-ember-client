@@ -11,9 +11,6 @@
     </div>
 
     <div class="level-right">
-      {{#attach-tooltip animation="shift" lazyRender="true"}}
-        {{#if belongsToUser}}Showing personal instances{{else}}Showing all instances{{/if}}
-      {{/attach-tooltip}}
       <div class="level-item">
         <a class="button" {{action "triggerBelongsToUser"}}>
     <span class="icon is-small">

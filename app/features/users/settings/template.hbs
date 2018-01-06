@@ -3,15 +3,27 @@
 
     <h1 class="title">Settings</h1>
 
+    <div class="notification">
+      <strong>Note:</strong> Since this data is sent through to Auth0 for safe keeping, it needs to be loaded back
+      through your JWT.
+
+      This requires reauthorizing with Swordfish.
+    </div>
+
     {{user-aws
       user=user
-      saveAws='saveAws'
+    }}
+
+    {{user-silverstripe
+      user=user
     }}
 
     {{user-gitlab
       user=user
-      saveGitlab='saveGitlab'
     }}
+
+    <button class="button is-primary is-min-width-button is-pulled-right" {{action "save" user}}>Save & logout</button>
+
 
   </div>
 </div>

@@ -2,45 +2,43 @@
   <div class="is-heading">
     <h1 class="title is-4">Amazon Details</h1>
     <h2 class="subtitle is-6">
-      Before you can create/view instances you'll need to update these details
+      Required to create/view servers
     </h2>
   </div>
 
   <div class="columns is-multiline">
     <div class="column is-12">
-      <label class="label">Aws key</label>
+      <label class="label">Access key</label>
       <div class="control">
         <div class="level">
           <div class="level-item">
-            {{input type="text" value=user.awsKey class="input"
-                    placeholder="Aws key"}}
+            {{input type="text" value=user.awsKey class="input" placeholder="Aws access key"}}
           </div>
         </div>
       </div>
     </div>
 
     <div class="column is-12">
-      <label class="label">Aws secret</label>
+      <label class="label">Access secret</label>
       <div class="control">
         <div class="level">
           <div class="level-item">
-            {{input type="text" value=user.awsSecret class="input"
-                    placeholder="Aws key"}}
+            {{input type="password" value=user.awsSecret class="input"
+                    placeholder="Aws secret key"}}
           </div>
         </div>
       </div>
     </div>
 
     <div class="column is-12">
-      <label class="label">Aws region</label>
+      <label class="label">Default region</label>
       <div class="control">
         <div class="level">
           <div class="level-item">
-            {{input type="text" value=user.awsRegion class="input" placeholder="ap-southeast-2"}}
+            {{input type="text" value=user.awsRegion class="input" placeholder="Aws default region"}}
           </div>
         </div>
 
-        <button class="button is-primary is-min-width-button is-pulled-right" {{action "saveAws"}}>Sync</button>
       </div>
 
     </div>

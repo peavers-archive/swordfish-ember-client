@@ -1,9 +1,8 @@
 <div class="view-section">
   <div class="is-heading">
-    <h1 class="title is-4">Gitlab</h1>
+    <h1 class="title is-4">Silverstripe API</h1>
     <h2 class="subtitle is-6">
-      This is only required when using Swordfish specific AMI's, and the Silverstripe API. This will allow Swordfish to
-      clone projects to your development server on your behalf.
+      This is only required if you wish to use database and asset restore features of Swordfish.
     </h2>
   </div>
 
@@ -13,19 +12,18 @@
       <div class="control">
         <div class="level">
           <div class="level-item">
-            {{input type="text" value=user.gitlabUsername class="input" placeholder="Gitlab username"}}
+            {{input type="text" value=user.silverstripeUsername class="input" placeholder="Silverstripe Username"}}
           </div>
         </div>
       </div>
-
     </div>
 
     <div class="column is-12">
-      <label class="label">Password</label>
+      <label class="label">Token</label>
       <div class="control">
         <div class="level">
           <div class="level-item">
-            {{input type="password" value=user.gitlabPassword class="input" placeholder="Gitlab password"}}
+            {{input type="password" value=user.silverstripeToken class="input" placeholder="Silverstripe Token"}}
           </div>
         </div>
       </div>

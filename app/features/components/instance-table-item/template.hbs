@@ -1,12 +1,5 @@
 <td class="is-narrow">
   <div class="people-avatar">
-    {{#attach-tooltip placement="bottom" animation="shift" lazyRender="true"}}
-      {{#if instance.userName}}
-        {{instance.userName}}
-      {{else}}
-        Unknown
-      {{/if}}
-    {{/attach-tooltip}}
     {{#if instance.userPicture}}
       <img src="{{instance.userPicture}}">
     {{else}}

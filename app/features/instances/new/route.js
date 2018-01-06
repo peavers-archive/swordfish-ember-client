@@ -8,6 +8,32 @@ export default Route.extend(AuthenticatedRouteMixin, {
 
   ajax: Ember.inject.service(),
 
+  beforeModel() {
+    if (get(this, 'session.data.authenticated')) {
+      this._getAwsInformation();
+    }
+  },
+
+  _getAwsInformation() {
+    try {
+      const profile = get(this, 'session.data.authenticated.profile');
+      const userData = profile['https://swordfish.space/user_metadata'];
+
+      const awsKey = get(userData, 'aws_key');
+      const awsSecret = get(userData, 'aws_secret');
+      const awsRegion = get(userData, 'aws_region');
+
+      if (awsKey === undefined || awsSecret === undefined || awsRegion === undefined) {
+        this.transitionTo('setup')
+      }
+
+      return {"aws_key": awsKey, "aws_secret": awsSecret, "aws_region": awsRegion}
+
+    } catch (error) {
+      // ignore
+    }
+  },
+
   model() {
     return RSVP.hash({
       instance: get(this, 'store').createRecord('instance', {
@@ -15,7 +41,6 @@ export default Route.extend(AuthenticatedRouteMixin, {
       }),
 
       securityGroups: get(this, 'store').findAll('security-group')
-
     });
   },
 

@@ -8,11 +8,22 @@ export default Route.extend(AuthenticatedRouteMixin, {
   session: service(),
   ajax: service(),
 
-  saved: false,
-
   model() {
+    const profile = get(this, 'session.data.authenticated.profile');
+    const userData = profile['https://swordfish.space/user_metadata'];
+
     return RSVP.hash({
-      user: get(this, 'store').createRecord('user')
+      user: get(this, 'store').createRecord('user', {
+        "awsKey": get(userData, 'aws_key'),
+        "awsSecret": get(userData, 'aws_secret'),
+        "awsRegion": get(userData, 'aws_region'),
+
+        "silverstripeUsername": get(userData, 'silverstripe_username'),
+        "silverstripeToken": get(userData, 'silverstripe_token'),
+
+        "gitlabUsername": get(userData, 'gitlab_username'),
+        "gitlabPassword": get(userData, 'gitlab_username')
+      })
     });
   },
 
@@ -23,23 +34,14 @@ export default Route.extend(AuthenticatedRouteMixin, {
   },
 
   actions: {
-    willTransition() {
-      this._super(...arguments);
+    save(user) {
 
-      this.controller.get('user').rollbackAttributes();
-    },
 
-    saveAws(user) {
-      return get(this, 'ajax').post('/users/aws', {
+      return get(this, 'ajax').post('/users', {
         data: JSON.stringify(user),
         context: this,
-      });
-    },
-
-    saveGitlab(user) {
-      return get(this, 'ajax').post('/users/gitlab', {
-        data: JSON.stringify(user),
-        context: this,
+      }).then(() => {
+        get(this, 'session').invalidate();
       });
     },
   },
