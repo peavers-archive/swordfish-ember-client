@@ -21,6 +21,10 @@ export default Route.extend(AuthenticatedRouteMixin, {
   },
 
   actions: {
+    error() {
+      this.replaceWith("error")
+    },
+
     restore() {
       const stackEvent = this.controller.get('stackEvent');
 

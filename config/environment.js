@@ -10,6 +10,10 @@ module.exports = function (environment) {
     rootURL: '/',
     locationType: 'auto',
 
+    pace: {
+      color: 'red'
+    },
+
     APP: {
       SWORDFISH: process.env.SWORDFISH,
       PUSHER_KEY: process.env.PUSHER_KEY,
