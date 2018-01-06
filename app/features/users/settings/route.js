@@ -14,15 +14,13 @@ export default Route.extend(AuthenticatedRouteMixin, {
 
     return RSVP.hash({
       user: get(this, 'store').createRecord('user', {
-        "awsKey": get(userData, 'aws_key'),
-        "awsSecret": get(userData, 'aws_secret'),
-        "awsRegion": get(userData, 'aws_region'),
-
-        "silverstripeUsername": get(userData, 'silverstripe_username'),
-        "silverstripeToken": get(userData, 'silverstripe_token'),
-
-        "gitlabUsername": get(userData, 'gitlab_username'),
-        "gitlabPassword": get(userData, 'gitlab_username')
+        "awsKey": get(userData, 'aws_key') || undefined,
+        "awsSecret": get(userData, 'aws_secret') || undefined,
+        "awsRegion": get(userData, 'aws_region') || undefined,
+        "silverstripeUsername": get(userData, 'silverstripe_username') || undefined,
+        "silverstripeToken": get(userData, 'silverstripe_token') || undefined,
+        "gitlabUsername": get(userData, 'gitlab_username') || undefined,
+        "gitlabPassword": get(userData, 'gitlab_username') || undefined,
       })
     });
   },
@@ -35,8 +33,6 @@ export default Route.extend(AuthenticatedRouteMixin, {
 
   actions: {
     save(user) {
-
-
       return get(this, 'ajax').post('/users', {
         data: JSON.stringify(user),
         context: this,

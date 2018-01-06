@@ -6,28 +6,42 @@
     </h2>
   </div>
 
-  <div class="columns is-multiline">
-    <div class="column is-12">
-      <label class="label">Username</label>
-      <div class="control">
-        <div class="level">
-          <div class="level-item">
-            {{input type="text" value=user.silverstripeUsername class="input" placeholder="Silverstripe Username"}}
+  <form>
+    <div class="columns is-multiline">
+      <div class="column is-12">
+        <label class="label">Username</label>
+        <div class="control">
+          <div class="level">
+            <div class="level-item">
+              {{input
+                type="text"
+                value=user.silverstripeUsername
+                class="input"
+                placeholder="Silverstripe Username"
+                autocomplete="off"
+              }}
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="column is-12">
-      <label class="label">Token</label>
-      <div class="control">
-        <div class="level">
-          <div class="level-item">
-            {{input type="password" value=user.silverstripeToken class="input" placeholder="Silverstripe Token"}}
+      <div class="column is-12">
+        <label class="label">Token</label>
+        <div class="control">
+          <div class="level">
+            <div class="level-item">
+              {{input
+                type="password"
+                value=user.silverstripeToken
+                class="input"
+                placeholder="Silverstripe Token"
+                autocomplete="off"
+              }}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </form>
 
 </div>

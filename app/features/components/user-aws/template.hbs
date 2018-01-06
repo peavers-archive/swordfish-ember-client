@@ -6,44 +6,59 @@
     </h2>
   </div>
 
-  <div class="columns is-multiline">
-    <div class="column is-12">
-      <label class="label">Access key</label>
-      <div class="control">
-        <div class="level">
-          <div class="level-item">
-            {{input type="text" value=user.awsKey class="input" placeholder="Aws access key"}}
+  <form>
+    <div class="columns is-multiline">
+      <div class="column is-12">
+        <label class="label">Access key</label>
+        <div class="control">
+          <div class="level">
+            <div class="level-item">
+              {{input
+                type="text"
+                value=user.awsKey
+                class="input"
+                placeholder="Aws access key"
+                autocomplete="off"
+              }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-12">
+        <label class="label">Access secret</label>
+        <div class="control">
+          <div class="level">
+            <div class="level-item">
+              {{input
+                type="password"
+                value=user.awsSecret
+                class="input"
+                placeholder="Aws secret key"
+                autocomplete="off"
+              }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-12">
+        <label class="label">Default region</label>
+        <div class="control">
+          <div class="level">
+            <div class="level-item">
+              {{input
+                type="text"
+                value=user.awsRegion
+                class="input"
+                placeholder="Aws default region"
+                autocomplete="off"
+              }}
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="column is-12">
-      <label class="label">Access secret</label>
-      <div class="control">
-        <div class="level">
-          <div class="level-item">
-            {{input type="password" value=user.awsSecret class="input"
-                    placeholder="Aws secret key"}}
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="column is-12">
-      <label class="label">Default region</label>
-      <div class="control">
-        <div class="level">
-          <div class="level-item">
-            {{input type="text" value=user.awsRegion class="input" placeholder="Aws default region"}}
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
+  </form>
 
 </div>

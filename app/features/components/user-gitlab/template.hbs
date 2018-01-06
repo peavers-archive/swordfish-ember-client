@@ -7,29 +7,41 @@
     </h2>
   </div>
 
-  <div class="columns is-multiline">
-    <div class="column is-12">
-      <label class="label">Username</label>
-      <div class="control">
-        <div class="level">
-          <div class="level-item">
-            {{input type="text" value=user.gitlabUsername class="input" placeholder="Gitlab username"}}
+  <form>
+    <div class="columns is-multiline">
+      <div class="column is-12">
+        <label class="label">Username</label>
+        <div class="control">
+          <div class="level">
+            <div class="level-item">
+              {{input
+                type="text"
+                value=user.gitlabUsername
+                class="input"
+                placeholder="Gitlab username"
+                autocomplete="off"
+              }}
+            </div>
           </div>
         </div>
       </div>
 
-    </div>
-
-    <div class="column is-12">
-      <label class="label">Password</label>
-      <div class="control">
-        <div class="level">
-          <div class="level-item">
-            {{input type="password" value=user.gitlabPassword class="input" placeholder="Gitlab password"}}
+      <div class="column is-12">
+        <label class="label">Password</label>
+        <div class="control">
+          <div class="level">
+            <div class="level-item">
+              {{input
+                type="password"
+                value=user.gitlabPassword
+                class="input"
+                placeholder="Gitlab password"
+                autocomplete="off"
+              }}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
+  </form>
 </div>
