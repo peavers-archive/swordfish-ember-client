@@ -7,6 +7,7 @@ import Ember from 'ember';
 export default Controller.extend(EmberPusher.Bindings, {
   session: service(),
   pusher: service(),
+  ajax: service(),
 
   PUSHER_SUBSCRIPTIONS: {
     restore_event: ['restore_info', 'restore_success', 'restore_error'],
@@ -36,6 +37,29 @@ export default Controller.extend(EmberPusher.Bindings, {
 
     restoreError(data) {
       get(this, 'notifications').error(data);
+    },
+
+    restore() {
+      const stackEvent = this.controller.get('stackEvent');
+
+      return get(this, 'ajax').post('/stack-events', {
+        data: JSON.stringify(stackEvent),
+        context: this,
+        success: function () {
+          this.controller.get('instance').rollbackAttributes();
+        },
+      });
+    },
+
+    triggerInstanceEvent(instance, event) {
+      instance.set('swordfishCommand', event);
+      if (event === "terminate") {
+        instance.save().then((instance) => instance.deleteRecord()).then(() => {
+          this.transitionTo('instances');
+        });
+      } else {
+        instance.save();
+      }
     },
 
   }

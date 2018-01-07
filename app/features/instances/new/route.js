@@ -9,6 +9,8 @@ export default Route.extend(AuthenticatedRouteMixin, {
   ajax: Ember.inject.service(),
 
   beforeModel() {
+    this._super();
+
     if (get(this, 'session.data.authenticated')) {
       this._getAwsInformation();
     }
@@ -23,11 +25,13 @@ export default Route.extend(AuthenticatedRouteMixin, {
       const awsSecret = get(userData, 'aws_secret');
       const awsRegion = get(userData, 'aws_region');
 
-      if (awsKey === undefined || awsSecret === undefined || awsRegion === undefined) {
+      if (awsKey === "" || awsSecret === "" || awsRegion === "") {
         this.transitionTo('setup')
       }
 
-      return {"aws_key": awsKey, "aws_secret": awsSecret, "aws_region": awsRegion}
+      if (awsKey === undefined || awsSecret === undefined || awsRegion === undefined) {
+        this.transitionTo('setup')
+      }
 
     } catch (error) {
       // ignore
