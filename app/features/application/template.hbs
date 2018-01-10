@@ -1,5 +1,8 @@
 {{#if session.isAuthenticated}}
-  {{site-header logout='logout' session=session}}
+  {{site-header
+    logout='logout'
+    session=session
+  }}
 {{/if}}
 
 {{outlet}}

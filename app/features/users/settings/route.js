@@ -8,20 +8,9 @@ export default Route.extend(AuthenticatedRouteMixin, {
   session: service(),
   ajax: service(),
 
-  model() {
-    const profile = get(this, 'session.data.authenticated.profile');
-    const userData = profile['https://swordfish.space/user_metadata'];
-
+  model(params) {
     return RSVP.hash({
-      user: get(this, 'store').createRecord('user', {
-        "awsKey": get(userData, 'aws_key') || undefined,
-        "awsSecret": get(userData, 'aws_secret') || undefined,
-        "awsRegion": get(userData, 'aws_region') || undefined,
-        "silverstripeUsername": get(userData, 'silverstripe_username') || undefined,
-        "silverstripeToken": get(userData, 'silverstripe_token') || undefined,
-        "gitlabUsername": get(userData, 'gitlab_username') || undefined,
-        "gitlabPassword": get(userData, 'gitlab_username') || undefined,
-      })
+      user: get(this, 'store').findRecord('user', params.instance_id)
     });
   },
 
@@ -33,12 +22,7 @@ export default Route.extend(AuthenticatedRouteMixin, {
 
   actions: {
     save(user) {
-      return get(this, 'ajax').post('/users', {
-        data: JSON.stringify(user),
-        context: this,
-      }).then(() => {
-        get(this, 'session').invalidate();
-      });
+      user.save();
     },
   },
 
