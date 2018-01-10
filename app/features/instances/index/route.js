@@ -9,8 +9,6 @@ export default Route.extend(AuthenticatedRouteMixin, {
   ajax: Ember.inject.service(),
 
   beforeModel() {
-    this._super();
-
     if (get(this, 'session.data.authenticated')) {
       this._getAwsInformation();
     }

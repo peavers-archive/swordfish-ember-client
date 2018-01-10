@@ -24,7 +24,6 @@ module.exports = function (environment) {
 
   ENV['ember-simple-auth'] = {
     authenticationRoute: 'login',
-    routeAfterAuthentication: 'instances',
     auth0: {
       clientID: process.env.AUTH0_CLIENT_ID,
       domain: process.env.AUTH0_DOMAIN
@@ -33,6 +32,7 @@ module.exports = function (environment) {
 
   if (environment === 'development') {
     ENV.APP.SWORDFISH = 'http://localhost:8080';
+    ENV.APP.LOGIN_REDIRECT = 'http://localhost:4200/instances';
     ENV.APP.PUSHER_KEY = process.env.DEV_PUSHER_KEY;
     ENV.APP.PUSHER_SECRET = process.env.DEV_PUSHER_SECRET;
   }

@@ -19,7 +19,7 @@ Router.map(function () {
   this.route('users', function () {
     this.route('settings');
   });
-  this.route('loading');
+
   this.route('login');
   this.route('setup');
 });
