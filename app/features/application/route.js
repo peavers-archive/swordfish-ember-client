@@ -10,9 +10,13 @@ export default Route.extend(ApplicationRouteMixin, UnauthenticatedRouteMixin, {
   session: service(),
 
   model() {
-    return RSVP.hash({
-      user: get(this, 'store').findRecord('user', get(this, 'session.data.authenticated.profile.sub'))
-    });
+    if (get(this, 'session.isAuthenticated')) {
+
+      return RSVP.hash({
+        user: get(this, 'store').findRecord('user', get(this, 'session.data.authenticated.profile.sub'))
+      });
+
+    }
   },
 
   setupController(controller, models) {
