@@ -1,6 +1,5 @@
 import Route from '@ember/routing/route';
 import ApplicationRouteMixin from 'ember-simple-auth-auth0/mixins/application-route-mixin';
-import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 import UnauthenticatedRouteMixin from 'ember-simple-auth/mixins/unauthenticated-route-mixin';
 import {get} from '@ember/object';
 import {inject as service} from '@ember/service'

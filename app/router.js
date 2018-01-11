@@ -15,13 +15,12 @@ Router.map(function () {
     this.route('all');
   });
 
-  this.route('error');
-
   this.route('users', function () {
-    this.route('settings');
+    this.route('edit');
   });
 
   this.route('setup');
+  this.route('error');
 });
 
 export default Router;

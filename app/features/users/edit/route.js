@@ -10,7 +10,7 @@ export default Route.extend(AuthenticatedRouteMixin, {
 
   model(params) {
     return RSVP.hash({
-      user: get(this, 'store').findRecord('user', params.instance_id)
+      user: get(this, 'store').findRecord('user', params.user_id)
     });
   },
 
