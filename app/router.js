@@ -16,10 +16,10 @@ Router.map(function () {
   });
 
   this.route('users', function () {
-    this.route('edit');
+    this.route('edit', {path: '/edit/:user_id'});
+    this.route('new');
   });
 
-  this.route('setup');
   this.route('error');
 });
 
