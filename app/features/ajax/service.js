@@ -1,9 +1,10 @@
 import Ember from 'ember';
 import AjaxService from 'ember-ajax/services/ajax';
+import {inject as service} from '@ember/service'
 import config from '../../config/environment';
 
 export default AjaxService.extend({
-  session: Ember.inject.service(),
+  session: service(),
   host: config.APP.SWORDFISH,
   dataType: 'json',
   contentType: 'application/json',

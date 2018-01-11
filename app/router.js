@@ -7,6 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function () {
+
   this.route('instances', function () {
     this.route('view', {path: '/view/:instance_id'});
     this.route('edit');
@@ -20,7 +21,6 @@ Router.map(function () {
     this.route('settings');
   });
 
-  this.route('login');
   this.route('setup');
 });
 

@@ -14,11 +14,9 @@ export default Route.extend(UnauthenticatedRouteMixin, {
         oidcConformant: true,
         hashCleanup: true,
         auth: {
-          responseType: 'token',
-          redirectUrl: config.APP.LOGIN_REDIRECT,
           audience: "http://swordfish-service",
           params: {
-            scope: 'openid profile user_metadata app_metadata',
+            scope: 'openid profile email',
           },
         }
       };

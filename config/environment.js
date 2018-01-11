@@ -9,10 +9,7 @@ module.exports = function (environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
-
-    pace: {
-      color: 'red'
-    },
+    pace: {color: 'black'},
 
     APP: {
       SWORDFISH: process.env.SWORDFISH,
@@ -23,7 +20,9 @@ module.exports = function (environment) {
   };
 
   ENV['ember-simple-auth'] = {
-    authenticationRoute: 'login',
+    authenticationRoute: '',
+    routeAfterAuthentication: 'instances',
+    routeIfAlreadyAuthenticated: 'instances',
     auth0: {
       clientID: process.env.AUTH0_CLIENT_ID,
       domain: process.env.AUTH0_DOMAIN
