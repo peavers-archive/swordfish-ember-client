@@ -34,13 +34,10 @@ export default Route.extend(AuthenticatedRouteMixin, {
     save() {
       const instance = this.controller.get('instance');
 
-      return get(this, 'ajax').post('/instances', {
-        data: JSON.stringify(instance),
-        context: this,
-        success: function () {
-          this.controller.get('instance').rollbackAttributes();
-          this.transitionTo('instances');
-        },
+      instance.save().catch(() => {
+        this.transitionTo('instances');
+      }).then(() => {
+        this.transitionTo('instances');
       });
     }
   },
