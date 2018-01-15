@@ -1,0 +1,16 @@
+.team-square {
+  text-align: center;
+  padding: 50px;
+  border: 2px solid $grey-500;
+  height: 400px;
+
+  .fa {
+    color: $grey-500;
+    padding-bottom: 20px;
+  }
+
+  .button {
+    width: 80px;
+  }
+
+}

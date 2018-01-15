@@ -7,11 +7,12 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function () {
+  this.route('errors');
+
   this.route('instances', function () {
     this.route('view', {path: '/view/:instance_id'});
     this.route('edit');
     this.route('new');
-    this.route('all');
   });
 
   this.route('users', function () {
@@ -19,7 +20,10 @@ Router.map(function () {
     this.route('new');
   });
 
-  this.route('errors');
+  this.route('teams', function () {
+    this.route('new');
+    this.route('join');
+  });
 });
 
 export default Router;

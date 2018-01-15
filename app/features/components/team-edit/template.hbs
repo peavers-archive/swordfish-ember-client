@@ -1,0 +1,26 @@
+<div class="view-section">
+  <div class="is-heading">
+    <h1 class="title is-4">Team details</h1>
+    <h2 class="subtitle is-6">
+      Basic information about the server you're creating.
+    </h2>
+  </div>
+
+  <div class="columns is-multiline">
+    <div class="column is-12">
+      <label class="label">Name</label>
+      <div class="control">
+        <div class="level">
+          <div class="level-item">
+            {{input type="text" value=team.name class="input" placeholder="Team name"}}
+          </div>
+          <span class="help"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="view-section">
+  <button class="button is-primary is-min-width-button" {{action "save" team}}>Build</button>
+</div>

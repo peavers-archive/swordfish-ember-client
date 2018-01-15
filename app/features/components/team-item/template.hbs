@@ -1,0 +1,11 @@
+<ul>
+  <li>
+    {{team.name}}
+  </li>
+  <li>
+    <span class="button is-primary" {{action "join" team}}>Join</span>
+  </li>
+  {{#each team.users as |user|}}
+    <li>{{user.awsKey}}</li>
+  {{/each}}
+</ul>
