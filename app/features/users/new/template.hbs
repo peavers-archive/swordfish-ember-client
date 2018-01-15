@@ -7,12 +7,13 @@
         <div class="hero-body">
           <div class="container has-text-centered">
             <h1 class="title">
-              Ah, I see you've not setup your AWS details.
+              Ah, I see you've not setup your AWS account.
             </h1>
             <h2 class="subtitle">
-              Can't do much without those, go plug em in!
+              ...Or you've done it wrong...
             </h2>
 
+            {{#link-to "users.edit" user.id classNames="button is-primary"}}Setup{{/link-to}}
 
           </div>
         </div>

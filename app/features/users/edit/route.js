@@ -23,7 +23,9 @@ export default Route.extend(AuthenticatedRouteMixin, {
   actions: {
     save(user) {
       set(user, 'swordfishCommand', 'update');
-      user.save();
+      user.save().then(() => {
+        this.transitionTo('instances');
+      });
     },
   },
 

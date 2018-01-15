@@ -98,7 +98,7 @@
   </table>
 </div>
 
-{{#if silverstripeSetup}}
+{{#if stacks }}
   <div class="view-section">
     <div class="is-heading">
       <h1 class="title is-4">Stacks</h1>
@@ -110,7 +110,7 @@
     <div class="columns is-multiline">
       {{#each stacks as |stack|}}
         {{instance-stack
-          restore="restore"
+          triggerRestoreEvent="triggerRestoreEvent"
           stackEvent=stackEvent
           stack=stack
           instanceId=instance.instanceId

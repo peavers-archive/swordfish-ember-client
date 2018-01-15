@@ -14,7 +14,9 @@ export default Route.extend(AuthenticatedRouteMixin, {
         swordfishCommand: "create"
       }),
 
-      securityGroups: get(this, 'store').findAll('security-group')
+      securityGroups: get(this, 'store').findAll('security-group').catch(() => {
+        this.transitionTo("users.new");
+      })
     });
   },
 
