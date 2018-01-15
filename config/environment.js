@@ -14,8 +14,7 @@ module.exports = function (environment) {
     APP: {
       SWORDFISH: process.env.SWORDFISH,
       PUSHER_KEY: process.env.PUSHER_KEY,
-      PUSHER_SECRET: process.env.PUSHER_SECRET,
-      LOGIN_REDIRECT: process.env.LOGIN_REDIRECT
+      PUSHER_SECRET: process.env.PUSHER_SECRET
     }
   };
 
@@ -31,7 +30,6 @@ module.exports = function (environment) {
 
   if (environment === 'development') {
     ENV.APP.SWORDFISH = 'http://localhost:8080';
-    ENV.APP.LOGIN_REDIRECT = 'http://localhost:4200/instances';
     ENV.APP.PUSHER_KEY = process.env.DEV_PUSHER_KEY;
     ENV.APP.PUSHER_SECRET = process.env.DEV_PUSHER_SECRET;
   }
