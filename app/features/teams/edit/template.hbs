@@ -1,0 +1,163 @@
+<div class="section">
+  <div class="container">
+
+    <h1 class="title">{{team.name}}</h1>
+
+    <div class="view-section">
+      <div class="is-heading">
+        <h1 class="title is-4">Team settings</h1>
+        <h2 class="subtitle is-6">
+
+        </h2>
+      </div>
+
+      <form>
+        <div class="columns is-multiline">
+          <div class="column is-12">
+            <label class="label">Rename</label>
+            <div class="control">
+              <div class="level">
+                <div class="level-item">
+                  {{input
+                    type="text"
+                    value=team.name
+                    class="input"
+                    placeholder="Team name"
+                    autocomplete="off"
+                  }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="view-section">
+      <h1 class="title is-4">Members</h1>
+
+      {{team-table
+        members = team.members
+      }}
+
+    </div>
+
+
+    <div class="view-section">
+      <div class="is-heading">
+        <h1 class="title is-4">Amazon Details</h1>
+        <h2 class="subtitle is-6">
+          Global settings all team members will use for accessing AWS
+        </h2>
+      </div>
+
+      <form>
+        <div class="columns is-multiline">
+          <div class="column is-12">
+            <label class="label">Access key</label>
+            <div class="control">
+              <div class="level">
+                <div class="level-item">
+                  {{input
+                    type="text"
+                    value=team.awsKey
+                    class="input"
+                    placeholder="Aws access key"
+                    autocomplete="off"
+                  }}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12">
+            <label class="label">Access secret</label>
+            <div class="control">
+              <div class="level">
+                <div class="level-item">
+                  {{input
+                    type="password"
+                    value=team.awsSecret
+                    class="input"
+                    placeholder="Aws secret key"
+                    autocomplete="off"
+                  }}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12">
+            <label class="label">Default region</label>
+            <div class="control">
+              <div class="level">
+                <div class="level-item">
+                  {{input
+                    type="text"
+                    value=team.awsRegion
+                    class="input"
+                    placeholder="Aws default region"
+                    autocomplete="off"
+                  }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="view-section">
+      <div class="is-heading">
+        <h1 class="title is-4">Silverstripe API</h1>
+        <h2 class="subtitle is-6">
+          Global settings all team members will use for accessing DASH
+        </h2>
+      </div>
+
+      <form>
+        <div class="columns is-multiline">
+          <div class="column is-12">
+            <label class="label">Username</label>
+            <div class="control">
+              <div class="level">
+                <div class="level-item">
+                  {{input
+                    type="text"
+                    value=team.silverstripeUsername
+                    class="input"
+                    placeholder="Silverstripe Username"
+                    autocomplete="off"
+                  }}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12">
+            <label class="label">Token</label>
+            <div class="control">
+              <div class="level">
+                <div class="level-item">
+                  {{input
+                    type="password"
+                    value=team.silverstripeToken
+                    class="input"
+                    placeholder="Silverstripe Token"
+                    autocomplete="off"
+                  }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <button class="button is-primary is-min-width-button" {{action "save" team}}>Save</button>
+
+    <button class="button is-danger is-min-width-button" {{action "delete" team}}>Delete</button>
+
+  </div>
+</div>

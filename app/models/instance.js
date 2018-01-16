@@ -15,20 +15,12 @@ export default Model.extend({
   publicIp: attr('string'),
   privateIp: attr('string'),
   securityGroupId: attr('string'),
-
   production: attr('boolean'),
   staticIp: attr('boolean'),
-
   created: attr('date'),
-
   swordfishCommand: attr("string"),
-
   userId: attr('string'),
   userName: attr('string'),
   userPicture: attr('string'),
-
-  auth0User: attr(),
-
   securityGroups: DS.hasMany('security-group'),
-
 });

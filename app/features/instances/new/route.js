@@ -29,7 +29,6 @@ export default Route.extend(AuthenticatedRouteMixin, {
   actions: {
     willTransition() {
       this._super(...arguments);
-
       this.controller.get('instance').rollbackAttributes();
     },
 

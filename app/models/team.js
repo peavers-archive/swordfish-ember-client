@@ -1,11 +1,11 @@
-import DS from 'ember-data';
+import attr from "ember-data/attr";
+import {belongsTo, hasMany} from "ember-data/relationships";
+import Base from "swordfish-ember-client/models/_swordfish-base"
 
+export default Base.extend({
+  name: attr('string'),
 
-export default DS.Model.extend({
-  name: DS.attr('string'),
-  swordfishCommand: DS.attr("string"),
+  // owner: belongsTo('user'),
 
-  ownerId: DS.attr('string'),
-
-  users: DS.hasMany('user'),
+  members: hasMany('user'),
 });

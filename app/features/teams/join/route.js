@@ -10,7 +10,8 @@ export default Route.extend(AuthenticatedRouteMixin, {
 
   model() {
     return RSVP.hash({
-      teams: get(this, 'store').findAll('team')
+      teams: get(this, 'store').findAll('team'),
+      user: get(this, 'store').findRecord('user', get(this, 'session.data.authenticated.profile.sub'))
     });
   },
 
@@ -20,10 +21,18 @@ export default Route.extend(AuthenticatedRouteMixin, {
 
   actions: {
     join(team) {
-      let user = get(this, 'store').peekRecord('user', get(this, 'session.data.authenticated.profile.sub'));
+      const user = this.controller.get('user');
 
       user.set('team', team);
+      user.set('swordfishCommand', 'update');
       user.save();
+      //
+      // console.log(get(user, 'id'));
+      //
+      // team.get('joinRequests').pushObject(user);
+      // team.set('swordfishCommand', 'update');
+      //
+      // team.save();
     }
   }
 

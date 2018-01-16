@@ -1,0 +1,16 @@
+<table class="table instance-table">
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>ID</th>
+    <th>State</th>
+    <th></th>
+  </tr>
+
+  {{#each members as |member|}}
+    {{team-table-item
+      member=member
+    }}
+  {{/each}}
+
+</table>

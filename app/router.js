@@ -7,8 +7,6 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function () {
-  this.route('errors');
-
   this.route('instances', function () {
     this.route('view', {path: '/view/:instance_id'});
     this.route('edit');
@@ -23,6 +21,8 @@ Router.map(function () {
   this.route('teams', function () {
     this.route('new');
     this.route('join');
+    this.route('edit', {path: '/edit/:team_id'});
+    this.route('view');
   });
 });
 

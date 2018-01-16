@@ -8,5 +8,4 @@ export default Model.extend({
   ipPermissions: attr('string'),
   ipPermissionsEgress: attr('string'),
   vpcId: attr('string'),
-
 });

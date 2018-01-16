@@ -1,20 +1,15 @@
 import attr from "ember-data/attr";
-import Model from "ember-data/model";
-import DS from 'ember-data';
+import {belongsTo, hasMany} from "ember-data/relationships";
+import Base from "swordfish-ember-client/models/_swordfish-base"
 
-
-export default Model.extend({
-  team: DS.belongsTo('team'),
-
-  swordfishCommand: attr("string"),
-
+export default Base.extend({
   awsKey: attr('string'),
   awsSecret: attr('string'),
   awsRegion: attr('string'),
-
   gitlabUsername: attr('string'),
   gitlabPassword: attr('string'),
-
   silverstripeUsername: attr('string'),
-  silverstripeToken: attr('string')
+  silverstripeToken: attr('string'),
+
+  team: belongsTo('team')
 });

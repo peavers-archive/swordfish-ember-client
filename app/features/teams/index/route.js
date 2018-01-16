@@ -10,8 +10,18 @@ export default Route.extend(AuthenticatedRouteMixin, {
 
   model() {
     return RSVP.hash({
-      user: get(this, 'store').peekRecord('user', get(this, 'session.data.authenticated.profile.sub'))
+      user: get(this, 'store').findRecord('user', get(this, 'session.data.authenticated.profile.sub'))
     });
+  },
+
+  afterModel(models) {
+    // const user = models['user'];
+
+    // this.transitionTo('teams.edit', get(user, 'team.id'));
+
+    // if (get(user, 'team.id') !== undefined) {
+    //   this.transitionTo('teams.edit', get(user, 'team.id'))
+    // }
   },
 
   setupController(controller, models) {

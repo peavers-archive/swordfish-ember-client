@@ -6,10 +6,11 @@ import {get} from '@ember/object';
 export default Route.extend(AuthenticatedRouteMixin, {
 
   model() {
+
     return RSVP.hash({
       team: get(this, 'store').createRecord('team', {
         swordfishCommand: 'create',
-        ownerId: get(this, 'session.data.authenticated.profile.sub')
+        owner: get(this, 'store').peekRecord('user', get(this, 'session.data.authenticated.profile.sub'))
       }),
     });
   },
@@ -19,8 +20,15 @@ export default Route.extend(AuthenticatedRouteMixin, {
   },
 
   actions: {
+    willTransition() {
+      this._super(...arguments);
+      this.controller.get('team').rollbackAttributes();
+    },
+
     save(team) {
-      team.save();
+      team.save().catch(() => {
+        this.replaceWith('teams')
+      });
     },
   }
 
