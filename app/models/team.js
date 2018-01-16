@@ -5,7 +5,7 @@ import Base from "swordfish-ember-client/models/_swordfish-base"
 export default Base.extend({
   name: attr('string'),
 
-  // owner: belongsTo('user'),
+  owner: belongsTo('user', {inverse: 'team'}),
 
   members: hasMany('user'),
 });

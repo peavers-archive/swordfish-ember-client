@@ -1,9 +1,53 @@
 <div class="section">
   <div class="container">
-    <div class="columns is-multiline">
-      {{#each teams as |team|}}
-        {{team-item team=team join='join'}}
-      {{/each}}
-    </div>
+
+    {{#if teams}}
+      <div class="view-section">
+        <div class="is-heading">
+          <h1 class="title is-4">Teams</h1>
+          <h2 class="subtitle is-6">
+            This sends a request to the team admin, you'll still need to be approved!
+          </h2>
+        </div>
+
+        <div class="columns">
+          <div class="column is-12">
+            {{#power-select
+              placeholder="Select team"
+              options=teams
+              searchEnabled=false
+              selected=user.team
+              onchange=(action "joinTeam")
+            as |team|}}
+              {{team.name}}
+            {{/power-select}}
+          </div>
+        </div>
+
+      </div>
+
+    {{else}}
+      <div class="no-instances">
+
+        <section class="hero is-medium">
+          <div class="hero-body">
+            <div class="container has-text-centered">
+              <h1 class="title">
+                You're first!
+              </h1>
+              <h2 class="subtitle">
+                Looks like nobody has created a team yet... You should lead the way!
+              </h2>
+
+              {{#link-to "teams.new" classNames="button is-primary"}}Start{{/link-to}}
+
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+    {{/if}}
+
   </div>
 </div>

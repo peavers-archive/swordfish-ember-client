@@ -1,62 +1,56 @@
 <div class="container">
   <div class="columns">
 
-    {{#if user.teamOwnerFor}}
-      {{isOwner}}
+    {{#if user.team}}
+      <div class="no-instances">
+
+        <section class="hero is-medium">
+          <div class="hero-body">
+            <div class="container has-text-centered">
+              <h1 class="title">
+                Looks like you're in team - {{user.team.name}}
+              </h1>
+              <h2 class="subtitle">
+                Can't be in two at once... that's greedy!
+              </h2>
+
+              <span class="button is-danger"{{action "leave"}}>Leave</span>
+
+            </div>
+          </div>
+
+        </section>
+
+      </div>
     {{else}}
 
-      {{#if user.team}}
-        <div class="no-instances">
+      <div class="column is-6">
+        <div class="team-square">
+          <h1 class="title">
+            <i class="fa fa-fw fa-group fa-5x"></i>
+          </h1>
+          <h2 class="subtitle">
+            Start a new team
+          </h2>
 
-          <section class="hero is-medium">
-            <div class="hero-body">
-              <div class="container has-text-centered">
-                <h1 class="title">
-                  Looks like you're in team - {{user.team.name}}
-                </h1>
-                <h2 class="subtitle">
-                  Can't be in two at once... that's greedy!
-                </h2>
+          {{#link-to "teams.new" classNames="button is-primary"}}Start{{/link-to}}
+        </div>
+      </div>
 
-                <span class="button is-danger"{{action "leave"}}>Leave</span>
+      <div class="column is-6">
+        <div class="team-square">
 
-              </div>
-            </div>
+          <h1 class="title">
+            <i class="fa fa-fw fa-search fa-5x"></i>
+          </h1>
+          <h2 class="subtitle">
+            Find an existing team
+          </h2>
 
-          </section>
+          {{#link-to "teams.join" classNames="button is-success"}}Find{{/link-to}}
 
         </div>
-      {{else}}
-
-        <div class="column is-6">
-          <div class="team-square">
-            <h1 class="title">
-              <i class="fa fa-fw fa-group fa-5x"></i>
-            </h1>
-            <h2 class="subtitle">
-              Build a new team
-            </h2>
-
-            {{#link-to "teams.new" classNames="button is-primary"}}Build{{/link-to}}
-          </div>
-        </div>
-
-        <div class="column is-6">
-          <div class="team-square">
-
-            <h1 class="title">
-              <i class="fa fa-fw fa-search fa-5x"></i>
-            </h1>
-            <h2 class="subtitle">
-              Find an existing team
-            </h2>
-
-            {{#link-to "teams.join" classNames="button is-success"}}Find{{/link-to}}
-
-          </div>
-        </div>
-
-      {{/if}}
+      </div>
 
     {{/if}}
 

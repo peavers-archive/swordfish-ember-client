@@ -15,13 +15,11 @@ export default Route.extend(AuthenticatedRouteMixin, {
   },
 
   afterModel(models) {
-    // const user = models['user'];
+    const user = models['user'];
 
-    // this.transitionTo('teams.edit', get(user, 'team.id'));
-
-    // if (get(user, 'team.id') !== undefined) {
-    //   this.transitionTo('teams.edit', get(user, 'team.id'))
-    // }
+    if (get(user, 'team.id') !== undefined) {
+      this.transitionTo('teams.edit', get(user, 'team.id'))
+    }
   },
 
   setupController(controller, models) {

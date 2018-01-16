@@ -19,21 +19,5 @@ export default Route.extend(AuthenticatedRouteMixin, {
     controller.setProperties(models);
   },
 
-  actions: {
-    join(team) {
-      const user = this.controller.get('user');
-
-      user.set('team', team);
-      user.set('swordfishCommand', 'update');
-      user.save();
-      //
-      // console.log(get(user, 'id'));
-      //
-      // team.get('joinRequests').pushObject(user);
-      // team.set('swordfishCommand', 'update');
-      //
-      // team.save();
-    }
-  }
 
 });

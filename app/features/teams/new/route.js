@@ -27,7 +27,7 @@ export default Route.extend(AuthenticatedRouteMixin, {
 
     save(team) {
       team.save().catch(() => {
-        this.replaceWith('teams')
+        //Ignore
       });
     },
   }
