@@ -3,6 +3,14 @@ import {belongsTo, hasMany} from "ember-data/relationships";
 import Base from "swordfish-ember-client/models/_swordfish-base"
 
 export default Base.extend({
+  email: attr('string'),
+  familyName: attr('string'),
+  givenName: attr('string'),
+  nickName: attr('string'),
+  name: attr('string'),
+  picture: attr('string'),
+  username: attr('string'),
+
   awsKey: attr('string'),
   awsSecret: attr('string'),
   awsRegion: attr('string'),
@@ -11,5 +19,6 @@ export default Base.extend({
   silverstripeUsername: attr('string'),
   silverstripeToken: attr('string'),
 
-  team: belongsTo('team')
+  teamId: attr('string'),
+  teamState: attr('string', {default: 'pending'})
 });

@@ -17,7 +17,7 @@
               options=teams
               searchEnabled=false
               selected=user.team
-              onchange=(action "joinTeam")
+              onchange=(action "save")
             as |team|}}
               {{team.name}}
             {{/power-select}}
@@ -25,7 +25,6 @@
         </div>
 
       </div>
-
     {{else}}
       <div class="no-instances">
 
@@ -43,7 +42,6 @@
 
             </div>
           </div>
-
         </section>
 
       </div>

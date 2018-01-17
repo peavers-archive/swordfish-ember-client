@@ -1,14 +1,23 @@
 import Controller from '@ember/controller';
+import {get, set} from '@ember/object';
 
 export default Controller.extend({
 
   actions: {
-    joinTeam(team) {
-      const user = this.get('user');
+    save(team) {
+      let user = get(this, 'user');
 
-      user.set('team', team);
-      user.set('swordfishCommand', 'update');
+      set(user, 'teamId', get(team, 'id'));
+      set(user, 'swordfishCommand', 'update');
       user.save();
-    }
+
+      get(team, 'users').then((users) => {
+        users.pushObject(user);
+      }).then(() => {
+        team.save().catch(() => {
+          //Ignored
+        });
+      });
+    },
   }
 });

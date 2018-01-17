@@ -5,7 +5,6 @@ import {get} from '@ember/object';
 import {inject as service} from '@ember/service';
 
 export default Route.extend(AuthenticatedRouteMixin, {
-
   session: service(),
 
   model() {
@@ -17,8 +16,10 @@ export default Route.extend(AuthenticatedRouteMixin, {
   afterModel(models) {
     const user = models['user'];
 
-    if (get(user, 'team.id') !== undefined) {
-      this.transitionTo('teams.edit', get(user, 'team.id'))
+    console.log(get(user, 'teamId'));
+
+    if (get(user, 'teamId') !== undefined) {
+      this.transitionTo('teams.edit', get(user, 'teamId'))
     }
   },
 
