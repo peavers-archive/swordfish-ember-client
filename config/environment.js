@@ -1,15 +1,14 @@
 /* eslint-env node */
-'use strict';
+"use strict";
 
-module.exports = function (environment) {
-
+module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'swordfish-ember-client',
-    podModulePrefix: 'swordfish-ember-client/features',
+    modulePrefix: "swordfish-ember-client",
+    podModulePrefix: "swordfish-ember-client/features",
     environment: environment,
-    rootURL: '/',
-    locationType: 'auto',
-    pace: {color: 'black'},
+    rootURL: "/",
+    locationType: "auto",
+    pace: { color: "black" },
 
     APP: {
       SWORDFISH: process.env.SWORDFISH,
@@ -18,18 +17,18 @@ module.exports = function (environment) {
     }
   };
 
-  ENV['ember-simple-auth'] = {
-    authenticationRoute: '/',
-    routeAfterAuthentication: 'instances',
-    routeIfAlreadyAuthenticated: 'instances',
+  ENV["ember-simple-auth"] = {
+    authenticationRoute: "/",
+    routeAfterAuthentication: "instances",
+    routeIfAlreadyAuthenticated: "instances",
     auth0: {
       clientID: process.env.AUTH0_CLIENT_ID,
       domain: process.env.AUTH0_DOMAIN
     }
   };
 
-  if (environment === 'development') {
-    ENV.APP.SWORDFISH = 'http://localhost:8080';
+  if (environment === "development") {
+    ENV.APP.SWORDFISH = "http://localhost:8080";
     ENV.APP.PUSHER_KEY = process.env.DEV_PUSHER_KEY;
     ENV.APP.PUSHER_SECRET = process.env.DEV_PUSHER_SECRET;
   }

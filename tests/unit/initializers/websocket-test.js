@@ -1,10 +1,10 @@
-import Application from '@ember/application';
-import {run} from '@ember/runloop';
-import {initialize} from 'swordfish-ember-client/initializers/websocket';
-import {module, test} from 'qunit';
-import destroyApp from '../../helpers/destroy-app';
+import Application from "@ember/application";
+import { run } from "@ember/runloop";
+import { initialize } from "swordfish-ember-client/initializers/websocket";
+import { module, test } from "qunit";
+import destroyApp from "../../helpers/destroy-app";
 
-module('Unit | Initializer | websocket', {
+module("Unit | Initializer | websocket", {
   beforeEach() {
     run(() => {
       this.application = Application.create();
@@ -17,7 +17,7 @@ module('Unit | Initializer | websocket', {
 });
 
 // Replace this with your real tests.
-test('it works', function (assert) {
+test("it works", function(assert) {
   initialize(this.application);
 
   // you would normally confirm the results of the initializer here

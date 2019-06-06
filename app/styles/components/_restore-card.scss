@@ -3,7 +3,6 @@ $queued: $purple-500;
 $done: $success;
 
 .restore-card {
-
   transition: all ease 1s;
 
   &.is-restoring {
@@ -29,7 +28,6 @@ $done: $success;
     .aurora-dropdown-menu .dropdown-title {
       color: $restoring !important;
     }
-
   }
 
   &.is-restoring-queued {
@@ -37,7 +35,7 @@ $done: $success;
 
     &:after {
       font-family: FontAwesome, serif;
-      content: '\f017';
+      content: "\f017";
       height: 25px;
       width: 25px;
       position: absolute;
@@ -50,7 +48,6 @@ $done: $success;
     .aurora-dropdown-menu .dropdown-title {
       color: $queued !important;
     }
-
   }
 
   &.is-restoring-done {
@@ -58,7 +55,7 @@ $done: $success;
 
     &:after {
       font-family: FontAwesome, serif;
-      content: '\f00c';
+      content: "\f00c";
       height: 25px;
       width: 25px;
       position: absolute;
@@ -72,8 +69,6 @@ $done: $success;
       color: $done !important;
     }
   }
-
-
 
   &:hover {
     background: #fff;
@@ -98,5 +93,4 @@ $done: $success;
   .aurora-dropdown-menu .menu-dropdown {
     margin: 0 0 25px 0;
   }
-
 }

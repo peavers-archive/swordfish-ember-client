@@ -13,7 +13,14 @@
   font-weight: 300;
 }
 
-.input:focus, .input.is-focused, .input:active, .input.is-active, .textarea:focus, .textarea.is-focused, .textarea:active, .textarea.is-active {
+.input:focus,
+.input.is-focused,
+.input:active,
+.input.is-active,
+.textarea:focus,
+.textarea.is-focused,
+.textarea:active,
+.textarea.is-active {
   border-bottom: 1px solid $primary;
   box-shadow: none;
 }

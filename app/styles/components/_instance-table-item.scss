@@ -19,7 +19,6 @@
   }
 
   .resource {
-
     .resource-title {
       line-height: 1.4rem;
       margin-bottom: 2px;
@@ -31,8 +30,8 @@
 
     .resource-description {
       color: #676767;
-      line-height: .8rem;
-      font-size: .8rem;
+      line-height: 0.8rem;
+      font-size: 0.8rem;
       clear: left;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -43,5 +42,4 @@
       color: #999;
     }
   }
-
 }

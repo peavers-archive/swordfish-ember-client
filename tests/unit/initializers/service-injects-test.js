@@ -1,9 +1,9 @@
-import Ember from 'ember';
-import {initialize} from 'swordfish-ember-client/initializers/service-injects';
-import {module, test} from 'qunit';
-import destroyApp from '../../helpers/destroy-app';
+import Ember from "ember";
+import { initialize } from "swordfish-ember-client/initializers/service-injects";
+import { module, test } from "qunit";
+import destroyApp from "../../helpers/destroy-app";
 
-module('Unit | Initializer | service injects', {
+module("Unit | Initializer | service injects", {
   beforeEach() {
     Ember.run(() => {
       this.application = Ember.Application.create();
@@ -16,7 +16,7 @@ module('Unit | Initializer | service injects', {
 });
 
 // Replace this with your real tests.
-test('it works', function (assert) {
+test("it works", function(assert) {
   initialize(this.application);
 
   // you would normally confirm the results of the initializer here

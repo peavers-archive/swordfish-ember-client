@@ -1,8 +1,8 @@
-import Route from '@ember/routing/route';
-import {get, set} from '@ember/object';
+import Route from "@ember/routing/route";
+import { get, set } from "@ember/object";
 import RSVP from "rsvp";
-import {inject as service} from '@ember/service';
-import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
+import { inject as service } from "@ember/service";
+import AuthenticatedRouteMixin from "ember-simple-auth/mixins/authenticated-route-mixin";
 
 export default Route.extend(AuthenticatedRouteMixin, {
   session: service(),
@@ -10,7 +10,7 @@ export default Route.extend(AuthenticatedRouteMixin, {
 
   model(params) {
     return RSVP.hash({
-      user: get(this, 'store').findRecord('user', params.user_id)
+      user: get(this, "store").findRecord("user", params.user_id)
     });
   },
 
@@ -22,11 +22,10 @@ export default Route.extend(AuthenticatedRouteMixin, {
 
   actions: {
     save(user) {
-      set(user, 'swordfishCommand', 'update');
+      set(user, "swordfishCommand", "update");
       user.save().then(() => {
-        this.transitionTo('instances');
+        this.transitionTo("instances");
       });
-    },
-  },
-
-})
+    }
+  }
+});

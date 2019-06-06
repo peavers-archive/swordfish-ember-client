@@ -1,13 +1,11 @@
-import Component from '@ember/component';
+import Component from "@ember/component";
 
 export default Component.extend({
-
-  classNames: ['column is-4'],
+  classNames: ["column is-4"],
 
   actions: {
     join(team) {
-      this.sendAction('join', team);
+      this.sendAction("join", team);
     }
   }
-
 });

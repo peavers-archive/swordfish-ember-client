@@ -1,11 +1,9 @@
-import Component from '@ember/component';
+import Component from "@ember/component";
 
 export default Component.extend({
-
   actions: {
     logout() {
-      this.sendAction('logout');
+      this.sendAction("logout");
     }
   }
-
 });

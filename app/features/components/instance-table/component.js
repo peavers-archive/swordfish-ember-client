@@ -1,21 +1,23 @@
-import {inject as service} from '@ember/service';
-import Component from '@ember/component';
-import {computed} from '@ember/object';
+import { inject as service } from "@ember/service";
+import Component from "@ember/component";
+import { computed } from "@ember/object";
 
 export default Component.extend({
   session: service(),
   belongsToUser: true,
 
-  filteredInstances: computed('instances.@each', 'belongsToUser', function () {
-    let belongsToUser = this.get('belongsToUser');
+  filteredInstances: computed("instances.@each", "belongsToUser", function() {
+    let belongsToUser = this.get("belongsToUser");
 
     if (belongsToUser) {
-      const instances = this.get('instances').filterBy('userId', this.get('session.data.authenticated.profile.sub'));
+      const instances = this.get("instances").filterBy(
+        "userId",
+        this.get("session.data.authenticated.profile.sub")
+      );
       return instances.length === 0 ? false : instances;
     } else {
-      return this.get('instances');
+      return this.get("instances");
     }
-
   }),
 
   actions: {
@@ -24,12 +26,11 @@ export default Component.extend({
     },
 
     triggerBelongsToUser() {
-      this.toggleProperty('belongsToUser');
+      this.toggleProperty("belongsToUser");
     },
 
     triggerRefreshAll() {
       this.sendAction("triggerRefreshAll");
     }
   }
-
 });
