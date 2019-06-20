@@ -1,3 +1,5 @@
+/** @format */
+
 import { moduleFor, test } from "ember-qunit";
 
 moduleFor("route:auth/login", "Unit | Route | auth/login", {

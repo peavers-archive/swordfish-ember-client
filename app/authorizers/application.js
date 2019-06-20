@@ -1,3 +1,5 @@
+/** @format */
+
 import { isPresent } from "@ember/utils";
 import { debug } from "@ember/debug";
 import BaseAuthorizer from "ember-simple-auth/authorizers/base";

@@ -1,3 +1,5 @@
+/** @format */
+
 import { moduleFor, test } from "ember-qunit";
 
 moduleFor("service:auth", "Unit | Service | auth", {

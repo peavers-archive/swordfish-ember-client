@@ -1,3 +1,5 @@
+/** @format */
+
 import EmberObject from "@ember/object";
 import SecureDefaultRouteFactoryMixin from "swordfish-ember-client/mixins/secure-default-route-factory";
 import { module, test } from "qunit";

@@ -1,3 +1,5 @@
+/** @format */
+
 import { moduleForModel, test } from "ember-qunit";
 
 moduleForModel("application", "Unit | Serializer | application", {

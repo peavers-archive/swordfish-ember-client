@@ -1,3 +1,5 @@
+/** @format */
+
 import { get, computed } from "@ember/object";
 import Component from "@ember/component";
 

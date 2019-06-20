@@ -1,3 +1,5 @@
+/** @format */
+
 import config from "../config/environment";
 
 export function initialize(applicationInstance) {

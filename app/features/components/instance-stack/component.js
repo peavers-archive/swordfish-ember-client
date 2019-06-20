@@ -1,3 +1,5 @@
+/** @format */
+
 import Component from "@ember/component";
 import { get, set } from "@ember/object";
 import Ember from "ember";

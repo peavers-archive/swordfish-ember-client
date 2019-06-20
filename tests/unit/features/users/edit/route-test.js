@@ -1,3 +1,5 @@
+/** @format */
+
 import { moduleFor, test } from "ember-qunit";
 
 moduleFor("route:users/edit", "Unit | Route | users/edit", {

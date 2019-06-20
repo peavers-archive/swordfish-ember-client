@@ -1,3 +1,5 @@
+/** @format */
+
 import Ember from "ember";
 import AjaxService from "ember-ajax/services/ajax";
 import { inject as service } from "@ember/service";

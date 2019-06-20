@@ -1,3 +1,5 @@
+/** @format */
+
 import Application from "@ember/application";
 import { run } from "@ember/runloop";
 import { initialize } from "swordfish-ember-client/initializers/websocket";
