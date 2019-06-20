@@ -1,3 +1,5 @@
+/** @format */
+
 import EmberRouter from "@ember/routing/router";
 import config from "./config/environment";
 

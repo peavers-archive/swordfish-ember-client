@@ -1,3 +1,5 @@
+/** @format */
+
 import Route from "@ember/routing/route";
 import { get, set } from "@ember/object";
 import RSVP from "rsvp";

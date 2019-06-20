@@ -1,3 +1,5 @@
+/** @format */
+
 import Controller from "@ember/controller";
 import { get, set } from "@ember/object";
 

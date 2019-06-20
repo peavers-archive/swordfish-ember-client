@@ -1,3 +1,5 @@
+/** @format */
+
 import Component from "@ember/component";
 import { inject as service } from "@ember/service";
 import { computed, get, set } from "@ember/object";

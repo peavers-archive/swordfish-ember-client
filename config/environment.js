@@ -1,4 +1,9 @@
-/* eslint-env node */
+/**
+ * /* eslint-env node
+ *
+ * @format
+ */
+
 "use strict";
 
 module.exports = function(environment) {

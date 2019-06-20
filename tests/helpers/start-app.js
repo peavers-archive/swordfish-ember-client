@@ -1,3 +1,5 @@
+/** @format */
+
 import Application from "../../app";
 import config from "../../config/environment";
 import { merge } from "@ember/polyfills";

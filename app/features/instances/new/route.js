@@ -1,3 +1,5 @@
+/** @format */
+
 import Ember from "ember";
 import Route from "@ember/routing/route";
 import { get } from "@ember/object";

@@ -1,3 +1,5 @@
+/** @format */
+
 import Ember from "ember";
 import { initialize } from "swordfish-ember-client/initializers/service-injects";
 import { module, test } from "qunit";
